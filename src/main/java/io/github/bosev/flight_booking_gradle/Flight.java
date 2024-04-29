@@ -1,5 +1,7 @@
 package io.github.bosev.flight_booking_gradle;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 
 public class Flight {
@@ -27,5 +29,19 @@ public class Flight {
 		this.price=price;
 		this.source=source;
 		this.status=status;
+	}
+
+	public Flight(ResultSet set) throws SQLException {
+			this.no=set.getString("flight_no");
+			this.name=set.getString("flight_name");
+			this.airline=set.getString("airline_name");
+			this.source=set.getString("source");
+			this.destination=set.getString("destination");
+			this.departure=set.getTimestamp("departure_time").toLocalDateTime();
+			this.arrival=set.getTimestamp("arrival_time").toLocalDateTime();
+			this.price=set.getDouble("price");
+			this.availableSeats=set.getInt("available_seats");
+			this.status=FlightStatus.fromString(set.getString("status"));
+			this.maxCapacity=set.getInt("max_capacity");
 	}
 }
