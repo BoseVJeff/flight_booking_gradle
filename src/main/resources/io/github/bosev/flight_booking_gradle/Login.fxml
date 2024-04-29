@@ -1,36 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.bosev.flight_booking_gradle.LoginController">
    <children>
-      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" stroke="BLACK" strokeType="INSIDE" width="600.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <VBox prefHeight="300.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
          <children>
-            <TilePane alignment="CENTER" hgap="50.0" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-               <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@logo_full_crop.png" />
-                     </image>
-                  </ImageView>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <Label text="Username" />
-                        <TextField fx:id="username" />
-                        <Label text="Password" />
-                        <PasswordField fx:id="password" />
-                        <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <Button mnemonicParsing="false" text="Signup" />
-                              <Button mnemonicParsing="false" text="Login" HBox.hgrow="ALWAYS" />
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-               </children></TilePane>
+            <ImageView fitHeight="300.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Login%20background.png" />
+               </image>
+            </ImageView>
          </children>
       </VBox>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="250.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <ImageView fitHeight="300.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Your_paragraph_text-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <HBox prefHeight="100.0" prefWidth="100.0">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Your_paragraph_text-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="230.0" AnchorPane.leftAnchor="100.0">
+         <children>
+            <Label text=" KOHINOOR AIRLINES | INDIA">
+               <HBox.margin>
+                  <Insets bottom="40.0" top="40.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Times New Roman Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="120.0">
+         <children>
+            <TextField promptText="Enter User Id" />
+         </children>
+      </HBox>
+      <HBox prefHeight="20.0" prefWidth="50.0" AnchorPane.leftAnchor="370.0" AnchorPane.topAnchor="123.0">
+         <children>
+            <Label text="User Id :" />
+         </children></HBox>
+      <HBox layoutX="440.0" layoutY="130.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="150.0">
+         <children>
+            <TextField promptText="Enter Username" />
+         </children>
+      </HBox>
+      <HBox layoutX="380.0" layoutY="130.0" prefHeight="20.0" prefWidth="70.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="153.0">
+         <children>
+            <Label text=" Username :">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="440.0" layoutY="160.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="180.0">
+         <children>
+            <PasswordField layoutX="10.0" layoutY="10.0" promptText="Enter Password" />
+         </children>
+      </HBox>
+      <HBox layoutX="360.0" layoutY="160.0" prefHeight="20.0" prefWidth="70.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="183.0">
+         <children>
+            <Label text="Password :">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets left="6.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="440.0" layoutY="190.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="210.0">
+         <children>
+            <PasswordField promptText="Confirm Password" />
+         </children>
+      </HBox>
+      <HBox layoutX="360.0" layoutY="193.0" prefHeight="20.0" prefWidth="110.0" AnchorPane.leftAnchor="305.0" AnchorPane.topAnchor="213.0">
+         <children>
+            <Label text="Confirm Password :">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets left="6.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="440.0" layoutY="160.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="240.0">
+         <children>
+            <TextField promptText="Enter Email Id" />
+         </children>
+      </HBox>
+      <HBox layoutX="360.0" layoutY="193.0" prefHeight="20.0" prefWidth="60.0" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="243.0">
+         <children>
+            <Label text="Email Id :">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets left="6.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="440.0" layoutY="250.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="270.0">
+         <children>
+            <TextField promptText="Enter Phone No." />
+         </children>
+      </HBox>
+      <HBox layoutX="360.0" layoutY="163.0" prefHeight="20.0" prefWidth="70.0" AnchorPane.leftAnchor="355.0" AnchorPane.topAnchor="273.0">
+         <children>
+            <Label text="Phone No :">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" text="Sign-Up" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="310.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="485.0" layoutY="320.0" mnemonicParsing="false" text="Back to Login" wrapText="true" AnchorPane.leftAnchor="458.0" AnchorPane.topAnchor="345.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <HBox prefHeight="100.0" prefWidth="250.0" AnchorPane.leftAnchor="350.0">
+         <children>
+            <Label alignment="CENTER" text="Registration Page" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="40.0" left="17.0" top="30.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Rockwell Bold Italic" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
