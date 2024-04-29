@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.bosev.flight_booking_gradle.LoginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.bosev.flight_booking_gradle.SignupController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" stroke="BLACK" strokeType="INSIDE" width="600.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <VBox prefHeight="300.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
@@ -60,7 +60,7 @@
          </children></HBox>
       <HBox layoutX="440.0" layoutY="130.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="150.0">
          <children>
-            <TextField promptText="Enter Username" />
+            <TextField fx:id="usernameField" promptText="Enter Username" />
          </children>
       </HBox>
       <HBox layoutX="380.0" layoutY="130.0" prefHeight="20.0" prefWidth="70.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="153.0">
@@ -74,7 +74,7 @@
       </HBox>
       <HBox layoutX="440.0" layoutY="160.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="180.0">
          <children>
-            <PasswordField layoutX="10.0" layoutY="10.0" promptText="Enter Password" />
+            <PasswordField fx:id="passwordField" layoutX="10.0" layoutY="10.0" promptText="Enter Password" />
          </children>
       </HBox>
       <HBox layoutX="360.0" layoutY="160.0" prefHeight="20.0" prefWidth="70.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="183.0">
@@ -91,7 +91,7 @@
       </HBox>
       <HBox layoutX="440.0" layoutY="190.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="210.0">
          <children>
-            <PasswordField promptText="Confirm Password" />
+            <PasswordField fx:id="passwordConfirmationField" promptText="Confirm Password" />
          </children>
       </HBox>
       <HBox layoutX="360.0" layoutY="193.0" prefHeight="20.0" prefWidth="110.0" AnchorPane.leftAnchor="305.0" AnchorPane.topAnchor="213.0">
@@ -108,7 +108,7 @@
       </HBox>
       <HBox layoutX="440.0" layoutY="160.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="240.0">
          <children>
-            <TextField promptText="Enter Email Id" />
+            <TextField fx:id="emailField" promptText="Enter Email Id" />
          </children>
       </HBox>
       <HBox layoutX="360.0" layoutY="193.0" prefHeight="20.0" prefWidth="60.0" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="243.0">
@@ -125,7 +125,7 @@
       </HBox>
       <HBox layoutX="440.0" layoutY="250.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="270.0">
          <children>
-            <TextField promptText="Enter Phone No." />
+            <TextField fx:id="phoneField" promptText="Enter Phone No." />
          </children>
       </HBox>
       <HBox layoutX="360.0" layoutY="163.0" prefHeight="20.0" prefWidth="70.0" AnchorPane.leftAnchor="355.0" AnchorPane.topAnchor="273.0">
