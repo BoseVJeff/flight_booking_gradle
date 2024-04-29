@@ -97,6 +97,10 @@ public class Database {
 
 		this.connection=ods.getConnection();
 
+		this.initTables();
+	}
+
+	private void initTables () throws SQLException {
 //		Initialising database tables
 		PreparedStatement flightPreparedStatement=this.connection.prepareStatement(flightTableSql);
 		PreparedStatement userPreparedStatement=this.connection.prepareStatement(userTableSql);
@@ -105,10 +109,6 @@ public class Database {
 		flightPreparedStatement.execute();
 		userPreparedStatement.execute();
 		passengerPreparedStatement.execute();
-	}
-
-	private void initTables () {
-
 	}
 
 	public void test() throws SQLException {

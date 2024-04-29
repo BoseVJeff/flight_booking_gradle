@@ -1,5 +1,8 @@
 package io.github.bosev.flight_booking_gradle;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class User {
 	public int id;
 	public String name;
@@ -13,6 +16,14 @@ public class User {
 		this.isAdmin = isAdmin;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
+	}
+
+	public User(ResultSet set) throws SQLException {
+		this.id= set.getInt("user_id");
+		this.name=set.getString("username");
+		this.email=set.getString("email");
+		this.phoneNumber=set.getString("phone_number");
+		this.isAdmin=set.getInt("isadmin")==1;
 	}
 }
 
