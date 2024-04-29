@@ -101,6 +101,17 @@
             </TableView>
          </content>
       </ScrollPane>
-      <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="400.0" />
+      <HBox prefHeight="40.0" prefWidth="230.0" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="185.0">
+         <children>
+            <Label text="Flight Details" underline="true">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
