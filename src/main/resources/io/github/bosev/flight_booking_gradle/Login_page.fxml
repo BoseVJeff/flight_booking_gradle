@@ -7,9 +7,18 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <VBox prefHeight="300.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <ImageView fitHeight="350.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Login%20background.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" stroke="BLACK" strokeType="INSIDE" width="623.0" />
       <HBox prefHeight="100.0" prefWidth="100.0">
          <children>
             <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
@@ -28,9 +37,9 @@
                   <Font name="System Bold" size="15.0" />
                </font></Label>
          </children></HBox>
-      <HBox layoutX="110.0" layoutY="10.0" prefHeight="100.0" prefWidth="230.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="0.0">
+      <HBox layoutX="110.0" layoutY="10.0" prefHeight="100.0" prefWidth="230.0" AnchorPane.leftAnchor="375.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label text="Login Page">
+            <Label text="Login Page" underline="true">
                <HBox.margin>
                   <Insets left="40.0" top="35.0" />
                </HBox.margin>
@@ -40,9 +49,9 @@
             </Label>
          </children>
       </HBox>
-      <VBox prefHeight="300.0" prefWidth="250.0" AnchorPane.topAnchor="100.0">
+      <VBox prefHeight="350.0" prefWidth="300.0" AnchorPane.topAnchor="100.0">
          <children>
-            <ImageView fitHeight="300.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="350.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Your_paragraph_text-removebg-preview.png" />
                </image>
