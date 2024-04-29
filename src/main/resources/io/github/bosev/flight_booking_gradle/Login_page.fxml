@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.bosev.flight_booking_gradle.LoginController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
       <HBox prefHeight="100.0" prefWidth="100.0">
@@ -51,11 +51,11 @@
       </VBox>
       <HBox prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="160.0">
          <children>
-            <TextField promptText="Enter User Id" />
+            <TextField fx:id="username" promptText="Enter User Id" />
          </children></HBox>
       <HBox layoutX="430.0" layoutY="170.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="190.0">
          <children>
-            <PasswordField promptText="Enter Password" />
+            <PasswordField fx:id="password" promptText="Enter Password" />
          </children>
       </HBox>
       <HBox prefHeight="20.0" prefWidth="65.0" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="163.0">

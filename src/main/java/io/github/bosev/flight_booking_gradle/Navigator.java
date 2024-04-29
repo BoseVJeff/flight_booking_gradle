@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
+import org.kordamp.bootstrapfx.BootstrapFX;
 
 /*
  * A navigator for the entire app.
@@ -102,8 +103,14 @@ public class Navigator {
 	 */
 	public void push(Scene scene) {
 		headIndex++;
+		addStylesheets(scene);
 		this.scenes[headIndex] = scene;
 		this.stage.setScene(this.scenes[headIndex]);
+	}
+
+	private void addStylesheets(Scene scene) {
+		scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
+		return;
 	}
 
 	/*
