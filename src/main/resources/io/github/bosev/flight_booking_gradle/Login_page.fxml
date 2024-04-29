@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.bosev.flight_booking_gradle.LoginController">
    <children>
       <VBox prefHeight="300.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
          <children>
@@ -77,11 +77,11 @@
       </VBox>
       <HBox prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="160.0">
          <children>
-            <TextField promptText="Enter User Id" />
+            <TextField fx:id="username" promptText="Enter User Id" />
          </children></HBox>
       <HBox layoutX="430.0" layoutY="170.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="190.0">
          <children>
-            <PasswordField promptText="Enter Password" />
+            <PasswordField fx:id="password" promptText="Enter Password" />
          </children>
       </HBox>
       <HBox prefHeight="20.0" prefWidth="65.0" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="163.0">
@@ -103,7 +103,7 @@
       </HBox>
       <HBox prefHeight="30.0" prefWidth="60.0" AnchorPane.leftAnchor="445.0" AnchorPane.topAnchor="230.0">
          <children>
-            <Button mnemonicParsing="false" text="Login">
+            <Button fx:id="loginButton" mnemonicParsing="false" text="Login">
                <font>
                   <Font name="Times New Roman Bold" size="14.0" />
                </font>
@@ -112,7 +112,7 @@
       </HBox>
       <HBox prefHeight="20.0" prefWidth="125.0" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="260.0">
          <children>
-            <Button mnemonicParsing="false" text="Back to Sign-Up">
+            <Button fx:id="signupButton" mnemonicParsing="false" text="Back to Sign-Up">
                <font>
                   <Font name="Times New Roman Bold" size="14.0" />
                </font></Button>

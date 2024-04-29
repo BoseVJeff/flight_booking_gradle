@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="450.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.bosev.flight_booking_gradle.LoginController">
+<AnchorPane prefHeight="450.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.bosev.flight_booking_gradle.SignupController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" stroke="BLACK" strokeType="INSIDE" width="667.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <fill>
@@ -71,7 +71,7 @@
       </HBox>
       <HBox layoutX="440.0" layoutY="130.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="150.0">
          <children>
-            <TextField promptText="Enter Username">
+            <TextField fx:id="usernameField" promptText="Enter Username">
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></TextField>
@@ -88,7 +88,7 @@
       </HBox>
       <HBox layoutX="440.0" layoutY="160.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="180.0">
          <children>
-            <PasswordField layoutX="10.0" layoutY="10.0" promptText="Enter Password">
+            <PasswordField fx:id="passwordField" layoutX="10.0" layoutY="10.0" promptText="Enter Password">
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></PasswordField>
@@ -108,7 +108,7 @@
       </HBox>
       <HBox layoutX="440.0" layoutY="190.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="210.0">
          <children>
-            <PasswordField promptText="Confirm Password">
+            <PasswordField fx:id="passwordConfirmationField" promptText="Confirm Password">
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></PasswordField>
@@ -128,7 +128,7 @@
       </HBox>
       <HBox layoutX="440.0" layoutY="160.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="240.0">
          <children>
-            <TextField promptText="Enter Email Id">
+            <TextField fx:id="emailField" promptText="Enter Email Id">
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></TextField>
@@ -148,7 +148,7 @@
       </HBox>
       <HBox layoutX="440.0" layoutY="250.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="270.0">
          <children>
-            <TextField promptText="Enter Phone No.">
+            <TextField fx:id="phoneField" promptText="Enter Phone No.">
                <font>
                   <Font name="Times New Roman" size="13.0" />
                </font></TextField>
@@ -163,12 +163,12 @@
             </Label>
          </children>
       </HBox>
-      <Button mnemonicParsing="false" text="Sign-Up" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="310.0">
+      <Button fx:id="signupButton" mnemonicParsing="false" text="Sign-Up" AnchorPane.leftAnchor="475.0" AnchorPane.topAnchor="310.0">
          <font>
             <Font name="Times New Roman Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="485.0" layoutY="320.0" mnemonicParsing="false" text="Back to Login" wrapText="true" AnchorPane.leftAnchor="458.0" AnchorPane.topAnchor="345.0">
+      <Button fx:id="backButton" layoutX="485.0" layoutY="320.0" mnemonicParsing="false" text="Back to Login" wrapText="true" AnchorPane.leftAnchor="458.0" AnchorPane.topAnchor="345.0">
          <font>
             <Font name="Times New Roman Bold" size="14.0" />
          </font>
