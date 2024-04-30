@@ -20,6 +20,10 @@ public class HelloApplication extends Application {
 			database.test();
 		} catch (SQLException e) {
 			System.out.println("Error getting database instance or test!");
+			System.err.println(e.getMessage());
+			for (int i = 0; i < e.getStackTrace().length; i++) {
+				System.err.println(e.getStackTrace()[i].toString());
+			}
 		}
 //		navigator.push(scene);
 //		navigator.push(HelloController.getParent());

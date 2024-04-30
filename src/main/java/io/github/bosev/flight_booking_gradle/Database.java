@@ -10,57 +10,45 @@ public class Database {
 
 	public static Database instance;
 
+//	SQL to create tables. Note that the `GENERATED ALWAYS AS IDENTITY START WITH 0 INCREMENT BY 1` feature is supported only on version 12 and later.
+
 	private static final String flightTableSql= """
-			BEGIN
-			    EXECUTE IMMEDIATE 'CREATE TABLE Flights (
-			    flight_no VARCHAR2(7) PRIMARY KEY,
-			    flight_name VARCHAR2(250),
-			    airline_name VARCHAR2(250),
-			    source VARCHAR2(250),
-			    destination VARCHAR2(250),
-			    departure_time TIMESTAMP NOT NULL,
-			    arrival_time TIMESTAMP NOT NULL,
-			    price DECIMAL(10, 2) NOT NULL,
-			    available_seats NUMBER(5) NOT NULL,
-			    status VARCHAR2(10) NOT NULL,
-			    max_capacity NUMBER(5),
-			    CONSTRAINT check_status CHECK (status IN ("SCHEDULED", "COMPLETED", "CANCELLED")),
-			    CONSTRAINT check_source CHECK (source != destination),
-			    CONSTRAINT check_departure CHECK (departure_time < arrival_time),
-			    CONSTRAINT check_seats_capacity CHECK (available_seats <= max_capacity)
-			    )';
-			EXCEPTION WHEN OTHERS THEN
-			    IF SQLCODE != -955 THEN
-			    RAISE;
-			END IF;
-			END;
+			CREATE TABLE Flights (
+				flight_no NUMBER GENERATED ALWAYS AS IDENTITY START WITH 0 INCREMENT BY 1,
+				flight_name VARCHAR2(250),
+				airline_name VARCHAR2(250),
+				source VARCHAR2(250),
+				destination VARCHAR2(250),
+				departure_time TIMESTAMP NOT NULL,
+				arrival_time TIMESTAMP NOT NULL,
+				price DECIMAL(10, 2) NOT NULL,
+				available_seats NUMBER(5) NOT NULL,
+				status VARCHAR2(10) NOT NULL,
+				max_capacity NUMBER(5),
+				CONSTRAINT check_status CHECK (status IN ('SCHEDULED', 'COMPLETED', 'CANCELLED')),
+				CONSTRAINT check_source CHECK (source != destination),
+				CONSTRAINT check_departure CHECK (departure_time < arrival_time),
+				CONSTRAINT check_seats_capacity CHECK (available_seats <= max_capacity)
+				);
 			""";
 
 	private static final String userTableSql= """
-			BEGIN
-			EXECUTE IMMEDIATE '
 			CREATE TABLE Users (
-				user_id NUMBER PRIMARY KEY,
+				user_id NUMBER GENERATED ALWAYS AS IDENTITY START WITH 0 INCREMENT BY 1,
 				username VARCHAR2(255) NOT NULL,
 				password VARCHAR2(255) NOT NULL,
 				email VARCHAR2(255) NOT NULL,
 				phone_number VARCHAR(20),
 				isadmin NUMBER(1) NOT NULL CHECK (isadmin IN (0, 1)),
 				CONSTRAINT unique_username UNIQUE (username),
-				CONSTRAINT unique_email UNIQUE (email),\
+				CONSTRAINT unique_email UNIQUE (email),
 				CONSTRAINT unique_phone_number UNIQUE (phone_number)
-			)';
-			EXCEPTION WHEN OTHERS THEN
-				IF SQLCODE != -955 THEN
-					RAISE;
-				END IF;
-			END;
+			);
 			""";
 
 	public static final String passengersTableSql= """
-			BEGIN
-			EXECUTE IMMEDIATE 'CREATE TABLE Passengers (
-				passenger_id NUMBER PRIMARY KEY,
+			CREATE TABLE Passengers (
+				passenger_id NUMBER GENERATED ALWAYS AS IDENTITY START WITH 0 INCREMENT BY 1,
 				name VARCHAR2(250) NOT NULL,
 				identification_type VARCHAR2(250) NOT NULL,
 				identification_id VARCHAR2(250) NOT NULL,
@@ -70,16 +58,31 @@ public class Database {
 				payment_id VARCHAR2(250),
 				age NUMBER,
 				gender VARCHAR2(8),
-			    CONSTRAINT gender_constraint CHECK (gender IN (''Male'',''Female'')),
+			    CONSTRAINT gender_constraint CHECK (gender IN ('Male','Female')),
 			    FOREIGN KEY (flight_no) REFERENCES Flights(flight_no),
 			    FOREIGN KEY (user_id) REFERENCES Users(user_id)
-				)';
-			EXCEPTION WHEN OTHERS THEN
+				);
+			""";
+
+	public static final String userCreate="INSERT INTO Users VALUES (";
+
+	private static String wrapSql(String sqlStatement) {
+		String sql=sqlStatement.replace("'","''");
+		sql=sql.replace(";","");
+		return """
+				BEGIN
+				EXECUTE IMMEDIATE '
+				"""+
+				sql+
+				"""
+				';
+				EXCEPTION WHEN OTHERS THEN
 				IF SQLCODE != -955 THEN
 					RAISE;
 				END IF;
-			END;
-			""";
+				END;
+				""";
+	}
 
 	public static Database getInstance() throws SQLException {
 		if(instance==null) {
@@ -102,9 +105,9 @@ public class Database {
 
 	private void initTables () throws SQLException {
 //		Initialising database tables
-		PreparedStatement flightPreparedStatement=this.connection.prepareStatement(flightTableSql);
-		PreparedStatement userPreparedStatement=this.connection.prepareStatement(userTableSql);
-		PreparedStatement passengerPreparedStatement=this.connection.prepareStatement(passengersTableSql);
+		PreparedStatement flightPreparedStatement=this.connection.prepareStatement(wrapSql(flightTableSql));
+		PreparedStatement userPreparedStatement=this.connection.prepareStatement(wrapSql(userTableSql));
+		PreparedStatement passengerPreparedStatement=this.connection.prepareStatement(wrapSql(passengersTableSql));
 
 		flightPreparedStatement.execute();
 		userPreparedStatement.execute();

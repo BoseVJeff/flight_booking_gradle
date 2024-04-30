@@ -34,6 +34,10 @@ public class Navigator {
 		return instance;
 	}
 
+	public static Navigator getInstance() {
+		return instance;
+	}
+
 	/*
 	 * Set up an empty navigator for a given Stage.
 	 */
