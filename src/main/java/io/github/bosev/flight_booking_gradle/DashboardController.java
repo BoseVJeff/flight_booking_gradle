@@ -14,6 +14,7 @@ public class DashboardController {
 	}
 
 	public static Scene getScene() throws IOException {
+		System.out.println(DashboardController.class.getResource("hello-view.fxml").toString());
 		FXMLLoader fxmlLoader = new FXMLLoader(DashboardController.class.getResource("Dashboard.fxml"));
 		Scene scene = new Scene(fxmlLoader.load());
 		return scene;
