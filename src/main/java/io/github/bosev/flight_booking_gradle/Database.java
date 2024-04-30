@@ -14,7 +14,7 @@ public class Database {
 
 	private static final String flightTableSql= """
 			CREATE TABLE Flights (
-				flight_no NUMBER GENERATED ALWAYS AS IDENTITY START WITH 0 INCREMENT BY 1,
+				flight_no NUMBER GENERATED ALWAYS AS IDENTITY START WITH 0 INCREMENT BY 1 MINVALUE 0 PRIMARY KEY,
 				flight_name VARCHAR2(250),
 				airline_name VARCHAR2(250),
 				source VARCHAR2(250),
@@ -34,7 +34,7 @@ public class Database {
 
 	private static final String userTableSql= """
 			CREATE TABLE Users (
-				user_id NUMBER GENERATED ALWAYS AS IDENTITY START WITH 0 INCREMENT BY 1,
+				user_id NUMBER GENERATED ALWAYS AS IDENTITY START WITH 0 INCREMENT BY 1 MINVALUE 0 PRIMARY KEY,
 				username VARCHAR2(255) NOT NULL,
 				password VARCHAR2(255) NOT NULL,
 				email VARCHAR2(255) NOT NULL,
@@ -48,12 +48,13 @@ public class Database {
 
 	public static final String passengersTableSql= """
 			CREATE TABLE Passengers (
-				passenger_id NUMBER GENERATED ALWAYS AS IDENTITY START WITH 0 INCREMENT BY 1,
+				passenger_id NUMBER GENERATED ALWAYS AS IDENTITY START WITH 0 INCREMENT BY 1 MINVALUE 0 PRIMARY KEY,
 				name VARCHAR2(250) NOT NULL,
 				identification_type VARCHAR2(250) NOT NULL,
 				identification_id VARCHAR2(250) NOT NULL,
-				flight_no VARCHAR2(7),
-				seat_no NUMBER,user_id NUMBER,
+				flight_no NUMBER,
+				seat_no NUMBER,
+				user_id NUMBER,
 				notes VARCHAR2(250),
 				payment_id VARCHAR2(250),
 				age NUMBER,
@@ -64,7 +65,14 @@ public class Database {
 				);
 			""";
 
-	public static final String userCreate="INSERT INTO Users VALUES (";
+	public static final String userCreate="INSERT INTO Users (username, password, phone_number, isadmin) VALUES (?,?,?,?,?)";
+	public PreparedStatement userCreateStmt;
+
+	public static final String flightCreate="INSERT INTO Flights (flight_name, airline_name,source,destination,departure_time,arrival_time,price,available_seats,status,max_capacity) VALUES (?,?,?,?,?,?,?,?,?)";
+	public PreparedStatement flightCreateStmt;
+
+	public static final String passengerCreate="INSERT INTO Passengers (name, identification_type,identification_id,flight_no,seat_no,notes,payment_id,age,gender) VALUES (?,?,?,?,?,?,?,?,?)";
+	public PreparedStatement passengerCreateStmt;
 
 	private static String wrapSql(String sqlStatement) {
 		String sql=sqlStatement.replace("'","''");
@@ -112,6 +120,10 @@ public class Database {
 		flightPreparedStatement.execute();
 		userPreparedStatement.execute();
 		passengerPreparedStatement.execute();
+
+		this.userCreateStmt=this.connection.prepareStatement(userCreate);
+		this.flightCreateStmt=this.connection.prepareStatement(flightCreate);
+		this.passengerCreateStmt=this.connection.prepareStatement(passengerCreate);
 	}
 
 	public void test() throws SQLException {
