@@ -10,6 +10,7 @@ module io.github.bosev.flight_booking_gradle {
 	requires com.oracle.database.jdbc;
 	requires java.sql;
 	requires java.naming;
+	requires javafx.media;
 
 	opens io.github.bosev.flight_booking_gradle to javafx.fxml;
 	exports io.github.bosev.flight_booking_gradle;
