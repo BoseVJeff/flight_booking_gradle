@@ -118,5 +118,10 @@
                </font></Button>
          </children>
       </HBox>
+      <Label AnchorPane.leftAnchor="460.0" AnchorPane.topAnchor="300.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
