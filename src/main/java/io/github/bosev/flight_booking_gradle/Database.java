@@ -67,7 +67,7 @@ public class Database {
 
 	public static final String userCreate="INSERT INTO Users (username, password,email, phone_number, isadmin) VALUES (?,?,?,?,?)";
 	public PreparedStatement userCreateStmt;
-	public static final String userGet="SELECT username,email,phone_number,isadmin FROM Users WHERE username=? AND password=?";
+	public static final String userGet="SELECT user_id,username,email,phone_number,isadmin FROM Users WHERE username=? AND password=?";
 	public PreparedStatement userGetStmt;
 
 	public static final String flightCreate="INSERT INTO Flights (flight_name, airline_name,source,destination,departure_time,arrival_time,price,available_seats,status,max_capacity) VALUES (?,?,?,?,?,?,?,?,?)";
