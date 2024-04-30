@@ -118,10 +118,17 @@
                </font></Button>
          </children>
       </HBox>
-      <Label AnchorPane.leftAnchor="460.0" AnchorPane.topAnchor="300.0">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
+      <HBox prefHeight="50.0" prefWidth="200.0" AnchorPane.leftAnchor="375.0" AnchorPane.topAnchor="300.0">
+         <children>
+            <Label alignment="CENTER" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="100.0" top="15.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
