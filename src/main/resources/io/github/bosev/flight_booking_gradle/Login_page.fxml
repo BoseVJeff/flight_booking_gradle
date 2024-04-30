@@ -103,7 +103,7 @@
       </HBox>
       <HBox prefHeight="30.0" prefWidth="60.0" AnchorPane.leftAnchor="445.0" AnchorPane.topAnchor="230.0">
          <children>
-            <Button fx:id="loginButton" mnemonicParsing="false" text="Login">
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" text="Login">
                <font>
                   <Font name="Times New Roman Bold" size="14.0" />
                </font>
@@ -112,7 +112,7 @@
       </HBox>
       <HBox prefHeight="20.0" prefWidth="125.0" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="260.0">
          <children>
-            <Button fx:id="signupButton" mnemonicParsing="false" text="Back to Sign-Up">
+            <Button fx:id="signupButton" mnemonicParsing="false" onAction="#signupUser" text="Back to Sign-Up">
                <font>
                   <Font name="Times New Roman Bold" size="14.0" />
                </font></Button>
@@ -120,12 +120,12 @@
       </HBox>
       <HBox prefHeight="50.0" prefWidth="200.0" AnchorPane.leftAnchor="375.0" AnchorPane.topAnchor="300.0">
          <children>
-            <Label alignment="CENTER" textAlignment="CENTER">
+            <Label fx:id="errorLabel" alignment="CENTER" textAlignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
                <HBox.margin>
-                  <Insets left="100.0" top="15.0" />
+                  <Insets left="10.0" top="15.0" />
                </HBox.margin>
             </Label>
          </children>
