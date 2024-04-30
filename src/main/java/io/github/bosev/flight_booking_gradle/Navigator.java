@@ -113,7 +113,7 @@ public class Navigator {
 	}
 
 	private void addStylesheets(Scene scene) {
-		scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
+//		scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
 		return;
 	}
 

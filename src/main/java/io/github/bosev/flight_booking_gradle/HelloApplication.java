@@ -25,9 +25,8 @@ public class HelloApplication extends Application {
 				System.err.println(e.getStackTrace()[i].toString());
 			}
 		}
-//		navigator.push(scene);
-//		navigator.push(HelloController.getParent());
-		navigator.push(HelloController.getScene());
+//		navigator.push(HelloController.getScene());
+		navigator.push(LoginController.getScene());
 	}
 
 	public static void main(String[] args) {

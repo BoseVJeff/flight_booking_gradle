@@ -65,8 +65,10 @@ public class Database {
 				);
 			""";
 
-	public static final String userCreate="INSERT INTO Users (username, password, phone_number, isadmin) VALUES (?,?,?,?,?)";
+	public static final String userCreate="INSERT INTO Users (username, password,email, phone_number, isadmin) VALUES (?,?,?,?,?)";
 	public PreparedStatement userCreateStmt;
+	public static final String userGet="SELECT username,email,phone_number,isadmin FROM Users WHERE username=? AND password=?";
+	public PreparedStatement userGetStmt;
 
 	public static final String flightCreate="INSERT INTO Flights (flight_name, airline_name,source,destination,departure_time,arrival_time,price,available_seats,status,max_capacity) VALUES (?,?,?,?,?,?,?,?,?)";
 	public PreparedStatement flightCreateStmt;
@@ -122,8 +124,31 @@ public class Database {
 		passengerPreparedStatement.execute();
 
 		this.userCreateStmt=this.connection.prepareStatement(userCreate);
+		this.userGetStmt=this.connection.prepareStatement(userGet);
 		this.flightCreateStmt=this.connection.prepareStatement(flightCreate);
 		this.passengerCreateStmt=this.connection.prepareStatement(passengerCreate);
+	}
+
+	public void insertUser(String name,String password, String email, String phoneNumber,boolean isAdmin) throws SQLException {
+		this.userCreateStmt.setString(1,name);
+		this.userCreateStmt.setString(2,password);
+		this.userCreateStmt.setString(3,email);
+		this.userCreateStmt.setString(4,phoneNumber);
+		this.userCreateStmt.setInt(5,isAdmin?1:0);
+
+		this.userCreateStmt.execute();
+	}
+
+	public User validateUser(String name, String password) throws SQLException,SQLTimeoutException {
+		this.userGetStmt.setString(1,name);
+		this.userGetStmt.setString(2,password);
+
+		ResultSet resultSet=this.userGetStmt.executeQuery();
+		if(resultSet.next()) {
+			return new User(resultSet);
+		} else {
+			return null;
+		}
 	}
 
 	public void test() throws SQLException {
