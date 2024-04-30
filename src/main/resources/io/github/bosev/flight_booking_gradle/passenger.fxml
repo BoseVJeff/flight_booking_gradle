@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="750.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="300.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Login_background.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
+         <fill>
+            <LinearGradient endX="0.46445497630331756" endY="0.018957345971563955" startX="0.44549763033175355" startY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color green="0.9599999785423279" blue="0.11050359904766083" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5163723979934431">
+                     <color>
+                        <Color red="0.7482014298439026" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.8041237113402062">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9961685823754789">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill></Rectangle>
+      <HBox prefHeight="100.0" prefWidth="100.0">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Your_paragraph_text-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="225.0" AnchorPane.leftAnchor="100.0">
+         <children>
+            <Label text="KOHINOOR AIRLINES | INDIA">
+               <HBox.margin>
+                  <Insets top="40.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Times New Roman Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="80.0" prefWidth="80.0" AnchorPane.leftAnchor="510.0">
+         <children>
+            <Circle fill="#b9b9b9" radius="40.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0">
+               <HBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </HBox.margin>
+            </Circle>
+         </children>
+      </HBox>
+      <HBox prefHeight="80.0" prefWidth="80.0" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@profil_icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox prefHeight="20.0" prefWidth="110.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="130.0">
+         <children>
+            <Label maxWidth="-Infinity" text="Passenger Name :">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font></Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="127.0">
+         <children>
+            <TextField fx:id="username" promptText="Passenger Name" />
+         </children></HBox>
+      <HBox layoutX="20.0" layoutY="140.0" prefHeight="20.0" prefWidth="110.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="167.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" maxWidth="-Infinity" text="Identity Proof :" textAlignment="RIGHT">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="13.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="140.0" layoutY="137.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="167.0">
+         <children>
+            <TextField fx:id="username1" promptText="Identity Type" />
+         </children>
+      </HBox>
+      <HBox layoutX="20.0" layoutY="177.0" prefHeight="20.0" prefWidth="110.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="207.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" maxWidth="-Infinity" text="Identification Id :" textAlignment="RIGHT">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="140.0" layoutY="177.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="207.0">
+         <children>
+            <TextField fx:id="username11" promptText="Document Id" />
+         </children>
+      </HBox>
+      <HBox layoutX="20.0" layoutY="217.0" prefHeight="20.0" prefWidth="60.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="247.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" maxWidth="-Infinity" text="Seat No :" textAlignment="RIGHT">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="140.0" layoutY="217.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="247.0">
+         <children>
+            <TextField fx:id="username111" promptText="Seat No." />
+         </children>
+      </HBox>
+      <HBox layoutX="70.0" layoutY="257.0" prefHeight="20.0" prefWidth="40.0" AnchorPane.leftAnchor="82.0" AnchorPane.topAnchor="287.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" maxWidth="-Infinity" text="Age :" textAlignment="RIGHT">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="140.0" layoutY="257.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="287.0">
+         <children>
+            <TextField fx:id="username1111" promptText="Enter Your Age" />
+         </children>
+      </HBox>
+      <HBox layoutX="92.0" layoutY="297.0" prefHeight="20.0" prefWidth="60.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="327.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" maxWidth="-Infinity" text="Gender :" textAlignment="RIGHT">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="140.0" layoutY="297.0" prefHeight="20.0" prefWidth="250.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="327.0">
+         <children>
+            <RadioButton mnemonicParsing="false" text="MALE">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font></RadioButton>
+            <RadioButton layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="FEMALE">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Times New Roman Italic" size="13.0" />
+               </font>
+            </RadioButton>
+            <RadioButton layoutX="82.0" layoutY="10.0" mnemonicParsing="false" text="OTHERS">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </HBox>
+      <HBox layoutX="70.0" layoutY="257.0" prefHeight="20.0" prefWidth="70.0" AnchorPane.leftAnchor="52.0" AnchorPane.topAnchor="367.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" maxWidth="-Infinity" text="Remarks :" textAlignment="RIGHT">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="140.0" layoutY="257.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="367.0">
+         <children>
+            <TextArea prefHeight="200.0" prefWidth="200.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextArea>
+         </children>
+      </HBox>
+      <HBox prefHeight="50.0" prefWidth="125.0" AnchorPane.leftAnchor="460.0" AnchorPane.topAnchor="360.0">
+         <children>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text=" ADD Passenger" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="180.0" AnchorPane.leftAnchor="325.0">
+         <children>
+            <Label alignment="CENTER" maxWidth="-Infinity" prefWidth="180.0" text="Username">
+               <HBox.margin>
+                  <Insets top="35.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
