@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="750.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="750.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox prefHeight="300.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
          <children>
@@ -31,6 +31,11 @@
                   <Stop offset="0.5163723979934431">
                      <color>
                         <Color red="0.7482014298439026" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.8041237113402062">
+                     <color>
+                        <Color red="1.0" />
                      </color>
                   </Stop>
                   <Stop offset="0.9961685823754789">
@@ -67,30 +72,24 @@
             </Label>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="100.0" AnchorPane.leftAnchor="500.0">
+      <HBox prefHeight="80.0" prefWidth="80.0" AnchorPane.leftAnchor="510.0">
          <children>
-            <Circle fill="#b9b9b9" radius="45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0">
+            <Circle fill="#b9b9b9" radius="40.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0">
                <HBox.margin>
                   <Insets left="5.0" top="5.0" />
                </HBox.margin>
             </Circle>
          </children>
       </HBox>
-      <HBox prefHeight="80.0" prefWidth="80.0" AnchorPane.leftAnchor="510.0" AnchorPane.topAnchor="10.0">
+      <HBox prefHeight="80.0" prefWidth="80.0" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="10.0">
          <children>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@profil_icon.png" />
                </image>
             </ImageView>
          </children>
       </HBox>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="65.0" stroke="BLACK" strokeType="INSIDE" width="600.0" AnchorPane.topAnchor="435.0" />
-      <ButtonBar buttonMinWidth="100.0" prefHeight="50.0" prefWidth="100.0" AnchorPane.leftAnchor="460.0" AnchorPane.topAnchor="440.0">
-        <buttons>
-          <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Add Passenger" />
-        </buttons>
-      </ButtonBar>
       <HBox prefHeight="20.0" prefWidth="110.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="130.0">
          <children>
             <Label maxWidth="-Infinity" text="Passenger Name :">
@@ -226,6 +225,23 @@
                   <Font size="13.0" />
                </font>
             </TextArea>
+         </children>
+      </HBox>
+      <HBox prefHeight="50.0" prefWidth="125.0" AnchorPane.leftAnchor="460.0" AnchorPane.topAnchor="360.0">
+         <children>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text=" ADD Passenger" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="180.0" AnchorPane.leftAnchor="325.0">
+         <children>
+            <Label alignment="CENTER" maxWidth="-Infinity" prefWidth="180.0" text="Username">
+               <HBox.margin>
+                  <Insets top="35.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
          </children>
       </HBox>
    </children>
