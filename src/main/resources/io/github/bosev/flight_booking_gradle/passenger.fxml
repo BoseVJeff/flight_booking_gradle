@@ -85,7 +85,7 @@
          <children>
             <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@profil_icon.png" />
+                  <Image url="@profile_icon.png" />
                </image>
             </ImageView>
          </children>
@@ -186,7 +186,7 @@
          <children>
             <RadioButton mnemonicParsing="false" text="MALE">
                <font>
-                  <Font name="System Italic" size="13.0" />
+                  <Font name="Times New Roman Italic" size="13.0" />
                </font></RadioButton>
             <RadioButton layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="FEMALE">
                <HBox.margin>
@@ -201,7 +201,7 @@
                   <Insets left="20.0" />
                </HBox.margin>
                <font>
-                  <Font size="13.0" />
+                  <Font name="Times New Roman Italic" size="13.0" />
                </font>
             </RadioButton>
          </children>
@@ -229,7 +229,10 @@
       </HBox>
       <HBox prefHeight="50.0" prefWidth="125.0" AnchorPane.leftAnchor="460.0" AnchorPane.topAnchor="360.0">
          <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text=" ADD Passenger" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text=" ADD Passenger">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="14.0" />
+               </font></Button>
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="180.0" AnchorPane.leftAnchor="325.0">
