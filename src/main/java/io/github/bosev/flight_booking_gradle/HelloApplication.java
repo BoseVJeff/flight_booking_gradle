@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class HelloApplication extends Application {
+	private Database database;
+
 	@Override
 	public void start(Stage stage) throws IOException {
 		FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
@@ -16,8 +18,8 @@ public class HelloApplication extends Application {
 		Navigator navigator=Navigator.getInstance(stage);
 		navigator.startNavigator();
 		try {
-			Database database=Database.getInstance();
-			database.test();
+			this.database=Database.getInstance();
+			this.database.test();
 		} catch (SQLException e) {
 			System.out.println("Error getting database instance or test!");
 			System.err.println(e.getMessage());
@@ -27,6 +29,15 @@ public class HelloApplication extends Application {
 		}
 //		navigator.push(HelloController.getScene());
 		navigator.push(LoginController.getScene());
+//		navigator.push(UserDump.getScene());
+	}
+
+	@Override
+	public void stop() throws Exception {
+		if(this.database!=null) {
+			this.database.cleanup();
+		}
+		super.stop();
 	}
 
 	public static void main(String[] args) {
