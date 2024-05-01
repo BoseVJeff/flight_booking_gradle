@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.bosev.flight_booking_gradle.CancelReservation">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color green="0.9700000286102295" blue="0.5094244480133057" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.30000001192092896" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <HBox prefHeight="100.0" prefWidth="100.0">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Your_paragraph_text-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+       <HBox prefHeight="100.0" prefWidth="225.0" AnchorPane.leftAnchor="100.0">
+           <children>
+               <Label text="KOHINOOR AIRLINES | INDIA">
+                   <HBox.margin>
+                       <Insets top="40.0" />
+                   </HBox.margin>
+                   <font>
+                       <Font name="Times New Roman Bold" size="15.0" />
+                   </font>
+               </Label>
+           </children>
+       </HBox>
+       <HBox prefHeight="80.0" prefWidth="80.0" AnchorPane.leftAnchor="510.0">
+           <children>
+               <Circle fill="#b9b9b9" radius="40.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0">
+                   <HBox.margin>
+                       <Insets left="5.0" top="5.0" />
+                   </HBox.margin>
+               </Circle>
+           </children>
+       </HBox>
+       <HBox prefHeight="80.0" prefWidth="80.0" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="10.0">
+           <children>
+               <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                   <image>
+                       <Image url="@profile_icon.png" />
+                   </image>
+               </ImageView>
+           </children>
+       </HBox>
+       <HBox prefHeight="100.0" prefWidth="180.0" AnchorPane.leftAnchor="325.0">
+           <children>
+               <Label alignment="CENTER" prefWidth="200.0" text="Username">
+                   <font>
+                       <Font name="Impact" size="20.0" />
+                   </font>
+                   <HBox.margin>
+                       <Insets top="35.0" />
+                   </HBox.margin>
+               </Label>
+           </children>
+       </HBox>
+      <HBox prefHeight="300.0" prefWidth="600.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@dashboard_image.jpeg" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <VBox prefHeight="200.0" prefWidth="150.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="150.0">
+         <children>
+            <HBox prefHeight="30.0" prefWidth="100.0">
+               <children>
+                  <Label text="Label" textFill="#04ff00">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="100.0">
+               <children>
+                  <Label text="Label" textFill="#04ff00">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="100.0">
+               <children>
+                  <Label text="Label" textFill="#04ff00">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="70.0" prefHeight="30.0" prefWidth="100.0">
+               <children>
+                  <Label text="Label" textFill="#04ff00">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="100.0" prefHeight="30.0" prefWidth="100.0">
+               <children>
+                  <Label text="Label" textFill="#04ff00">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="160.0" layoutY="160.0" prefHeight="200.0" prefWidth="150.0" AnchorPane.leftAnchor="310.0" AnchorPane.topAnchor="150.0">
+         <children>
+            <HBox prefHeight="30.0" prefWidth="100.0">
+               <children>
+                  <Label text="Label" textFill="#04ff00">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="100.0">
+               <children>
+                  <Label text="Label" textFill="#04ff00">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="100.0">
+               <children>
+                  <Label text="Label" textFill="#04ff00">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="70.0" prefHeight="30.0" prefWidth="100.0">
+               <children>
+                  <Label text="Label" textFill="#04ff00">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="100.0" prefHeight="30.0" prefWidth="100.0">
+               <children>
+                  <Label text="Label" textFill="#04ff00">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
