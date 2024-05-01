@@ -85,7 +85,7 @@ public class LoginController {
 			} else {
 				this.appState.user=user;
 				try {
-					this.navigator.push(DashboardController.getScene());
+					this.navigator.push(FlightDashboardController.getScene());
 				} catch (IOException e) {
 					System.err.println("Failed to load dashboard!");
 					System.err.println(e.getMessage());

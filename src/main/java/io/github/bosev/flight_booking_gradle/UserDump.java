@@ -1,5 +1,6 @@
 package io.github.bosev.flight_booking_gradle;
 
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,7 +8,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.collections.FXCollections;
+import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URL;
@@ -44,6 +47,14 @@ public class UserDump implements Initializable {
 		this.emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
 		this.phoneColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
 		this.isAdminColumn.setCellValueFactory(new PropertyValueFactory<>("isAdmin"));
+		CheckBoxTableCell<User,Boolean> checkBoxTableCell=new CheckBoxTableCell<User,Boolean>();
+//		checkBoxTableCell.setSelectedStateCallback(new Callback<Integer, ObservableValue<Boolean>>() {
+//			@Override
+//			public ObservableValue<Boolean> call(Integer integer) {
+//				System.out.println(integer);
+//			}
+//		});
+		this.isAdminColumn.setCellFactory(tc->checkBoxTableCell);
 	}
 
 	public static Scene getScene() throws IOException {
@@ -99,6 +110,4 @@ public class UserDump implements Initializable {
 
 	@FXML
 	private Button button;
-
-
 }
