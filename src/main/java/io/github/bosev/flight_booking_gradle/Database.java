@@ -1,9 +1,11 @@
 package io.github.bosev.flight_booking_gradle;
 
 import oracle.jdbc.pool.OracleDataSource;
+import oracle.jdbc.proxy.annotation.Pre;
 
 import java.sql.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Database {
 	Connection connection;
@@ -76,6 +78,15 @@ public class Database {
 	public static final String passengerCreate="INSERT INTO Passengers (name, identification_type,identification_id,flight_no,seat_no,notes,payment_id,age,gender) VALUES (?,?,?,?,?,?,?,?,?)";
 	public PreparedStatement passengerCreateStmt;
 
+	public static final String userGetAll="SELECT user_id,username,email,phone_number,isadmin FROM Users";
+	public  PreparedStatement userGetAllPreparedStmt;
+
+	public static final String makeAdmin="UPDATE Users SET isadmin=1 WHERE user_id=?;";
+	public PreparedStatement makeAdminPreparedStmt;
+
+	public static final String removeAdmin="UPDATE Users SET isadmin=0 WHERE user_id=?;";
+	public PreparedStatement removeAdminPreparedStmt;
+
 	private static String wrapSql(String sqlStatement) {
 		String sql=sqlStatement.replace("'","''");
 		sql=sql.replace(";","");
@@ -127,6 +138,9 @@ public class Database {
 		this.userGetStmt=this.connection.prepareStatement(userGet);
 		this.flightCreateStmt=this.connection.prepareStatement(flightCreate);
 		this.passengerCreateStmt=this.connection.prepareStatement(passengerCreate);
+		this.userGetAllPreparedStmt=this.connection.prepareStatement(userGetAll);
+		this.makeAdminPreparedStmt=this.connection.prepareStatement(makeAdmin);
+		this.removeAdminPreparedStmt=this.connection.prepareStatement(removeAdmin);
 	}
 
 	public void insertUser(String name,String password, String email, String phoneNumber,boolean isAdmin) throws SQLException {
@@ -149,6 +163,17 @@ public class Database {
 		} else {
 			return null;
 		}
+	}
+
+	public ArrayList<User> getAllUsers() throws SQLException {
+		ArrayList<User> usersList=new ArrayList<User>();
+		ResultSet resultSet=this.userGetAllPreparedStmt.executeQuery();
+
+		while(resultSet.next()) {
+			usersList.add(new User(resultSet));
+		}
+
+		return usersList;
 	}
 
 	public void test() throws SQLException {
