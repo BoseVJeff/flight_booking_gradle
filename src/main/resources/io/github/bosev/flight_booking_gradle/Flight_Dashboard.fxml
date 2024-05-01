@@ -116,7 +116,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                         </Button>
-                        <Button mnemonicParsing="false" text="Cancel Reservation" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="160.0">
+                        <Button mnemonicParsing="false" text="Exit" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="160.0">
                            <font>
                               <Font name="Verdana Bold Italic" size="18.0" />
                            </font>
