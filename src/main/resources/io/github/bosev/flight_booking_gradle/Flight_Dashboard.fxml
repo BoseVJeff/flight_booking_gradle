@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.bosev.flight_booking_gradle.FlightDashboardController">
    <top>
       <AnchorPane prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
           <children>
@@ -68,7 +68,7 @@
               </HBox>
             <HBox prefHeight="100.0" prefWidth="180.0" AnchorPane.leftAnchor="425.0">
                <children>
-                  <Label alignment="CENTER" prefWidth="200.0" text="Username">
+                  <Label fx:id="username" alignment="CENTER" prefWidth="200.0" text="Username">
                      <font>
                         <Font name="Impact" size="20.0" />
                      </font>
@@ -108,7 +108,7 @@
                               <Image url="@BG_image-2.jpeg" />
                            </image>
                         </ImageView>
-                        <Button mnemonicParsing="false" text="View Tickets" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="70.0">
+                        <Button fx:id="viewTicketsButton" mnemonicParsing="false" text="View Tickets" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="70.0">
                            <font>
                               <Font name="Verdana Bold Italic" size="18.0" />
                            </font>
@@ -116,7 +116,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                         </Button>
-                        <Button mnemonicParsing="false" text="Exit" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="160.0">
+                        <Button fx:id="exitButton" mnemonicParsing="false" text="Exit" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="160.0">
                            <font>
                               <Font name="Verdana Bold Italic" size="18.0" />
                            </font>
@@ -124,7 +124,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                         </Button>
-                        <Button mnemonicParsing="false" prefWidth="180.0" text="Book Flights" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="25.0">
+                        <Button fx:id="bookFlightsButton" mnemonicParsing="false" prefWidth="180.0" text="Book Flights" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="25.0">
                            <font>
                               <Font name="Verdana Bold Italic" size="18.0" />
                            </font>
@@ -132,7 +132,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                         </Button>
-                        <Button mnemonicParsing="false" text="Sign-Up Page" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="115.0">
+                        <Button fx:id="signupButton" mnemonicParsing="false" text="Sign-Up Page" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="115.0">
                            <font>
                               <Font name="Verdana Bold Italic" size="18.0" />
                            </font>
