@@ -108,58 +108,38 @@
                               <Image url="@BG_image-2.jpeg" />
                            </image>
                         </ImageView>
-                        <VBox prefHeight="200.0" prefWidth="220.0">
-                           <children>
-                              <Button mnemonicParsing="false" prefWidth="180.0" text="Flight Booking">
-                                 <font>
-                                    <Font name="Verdana Bold Italic" size="18.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </padding>
-                                 <VBox.margin>
-                                    <Insets left="30.0" top="40.0" />
-                                 </VBox.margin>
-                              </Button>
-                              <Button mnemonicParsing="false" text="Sign-Up Page">
-                                 <font>
-                                    <Font name="Verdana Bold Italic" size="18.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </padding>
-                                 <VBox.margin>
-                                    <Insets left="50.0" top="40.0" />
-                                 </VBox.margin>
-                              </Button>
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="200.0" prefWidth="230.0" AnchorPane.leftAnchor="220.0">
-                           <children>
-                              <Button mnemonicParsing="false" text="Available Flights">
-                                 <font>
-                                    <Font name="Verdana Bold Italic" size="18.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </padding>
-                                 <VBox.margin>
-                                    <Insets left="30.0" top="40.0" />
-                                 </VBox.margin>
-                              </Button>
-                              <Button mnemonicParsing="false" text="Login Page">
-                                 <font>
-                                    <Font name="Verdana Bold Italic" size="18.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </padding>
-                                 <VBox.margin>
-                                    <Insets left="50.0" top="40.0" />
-                                 </VBox.margin>
-                              </Button>
-                           </children>
-                        </VBox>
+                        <Button mnemonicParsing="false" text="View Tickets" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="70.0">
+                           <font>
+                              <Font name="Verdana Bold Italic" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Button>
+                        <Button mnemonicParsing="false" text="Cancel Reservation" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="160.0">
+                           <font>
+                              <Font name="Verdana Bold Italic" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Button>
+                        <Button mnemonicParsing="false" prefWidth="180.0" text="Book Flights" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="25.0">
+                           <font>
+                              <Font name="Verdana Bold Italic" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Button>
+                        <Button mnemonicParsing="false" text="Sign-Up Page" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="115.0">
+                           <font>
+                              <Font name="Verdana Bold Italic" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Button>
                      </children>
                   </AnchorPane>
               </items>
