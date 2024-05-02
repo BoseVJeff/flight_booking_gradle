@@ -28,8 +28,8 @@ public class HelloApplication extends Application {
 			}
 		}
 //		navigator.push(HelloController.getScene());
-		navigator.push(LoginController.getScene());
-//		navigator.push(UserDump.getScene());
+//		navigator.push(LoginController.getScene());
+		navigator.push(UserDump.getScene());
 	}
 
 	@Override

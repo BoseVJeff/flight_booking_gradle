@@ -1,7 +1,6 @@
 package io.github.bosev.flight_booking_gradle;
 
 import oracle.jdbc.pool.OracleDataSource;
-import oracle.jdbc.proxy.annotation.Pre;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -81,10 +80,10 @@ public class Database {
 	public static final String userGetAll="SELECT user_id,username,email,phone_number,isadmin FROM Users";
 	public  PreparedStatement userGetAllPreparedStmt;
 
-	public static final String makeAdmin="UPDATE Users SET isadmin=1 WHERE user_id=?;";
+	public static final String makeAdminSql ="UPDATE Users SET isadmin=1 WHERE user_id=?";
 	public PreparedStatement makeAdminPreparedStmt;
 
-	public static final String removeAdmin="UPDATE Users SET isadmin=0 WHERE user_id=?;";
+	public static final String removeAdminSql ="UPDATE Users SET isadmin=0 WHERE user_id=?";
 	public PreparedStatement removeAdminPreparedStmt;
 
 	private static String wrapSql(String sqlStatement) {
@@ -139,8 +138,8 @@ public class Database {
 		this.flightCreateStmt=this.connection.prepareStatement(flightCreate);
 		this.passengerCreateStmt=this.connection.prepareStatement(passengerCreate);
 		this.userGetAllPreparedStmt=this.connection.prepareStatement(userGetAll);
-		this.makeAdminPreparedStmt=this.connection.prepareStatement(makeAdmin);
-		this.removeAdminPreparedStmt=this.connection.prepareStatement(removeAdmin);
+		this.makeAdminPreparedStmt=this.connection.prepareStatement(makeAdminSql);
+		this.removeAdminPreparedStmt=this.connection.prepareStatement(removeAdminSql);
 	}
 
 	public void insertUser(String name,String password, String email, String phoneNumber,boolean isAdmin) throws SQLException {
@@ -174,6 +173,18 @@ public class Database {
 		}
 
 		return usersList;
+	}
+
+	public void makeAdmin(int userId) throws SQLException {
+		this.makeAdminPreparedStmt.setInt(1,userId);
+		this.makeAdminPreparedStmt.execute();
+		return;
+	}
+
+	public void removeAdmin(int userId) throws SQLException {
+		this.removeAdminPreparedStmt.setInt(1,userId);
+		this.removeAdminPreparedStmt.execute();
+		return;
 	}
 
 	public void test() throws SQLException {
