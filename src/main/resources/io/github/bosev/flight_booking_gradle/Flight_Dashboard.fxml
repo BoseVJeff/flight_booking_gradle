@@ -78,6 +78,7 @@
                   </Label>
                </children>
             </HBox>
+            <Button fx:id="adminButton" layoutX="399.0" layoutY="38.0" mnemonicParsing="false" onAction="#launchAdminPage" text="Admin" visible="false" />
           </children>
       </AnchorPane>
    </top>

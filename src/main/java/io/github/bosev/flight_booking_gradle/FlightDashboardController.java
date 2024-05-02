@@ -1,5 +1,6 @@
 package io.github.bosev.flight_booking_gradle;
 
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,6 +29,16 @@ public class FlightDashboardController implements Initializable {
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		this.username.setText(appState.user.name);
+		System.out.println(appState.user.isAdmin);
+		try {
+			this.adminButton.visibleProperty().bind(new SimpleBooleanProperty(appState.user.isAdmin));
+		} catch (Exception e) {
+			System.err.println("["+e.getClass().getName()+"]"+"Exception binding boolean!");
+			System.err.println(e.getMessage());
+			for (int i = 0; i < e.getStackTrace().length; i++) {
+				System.err.println(e.getStackTrace()[i].toString());
+			}
+		}
 	}
 
 	@FXML
@@ -50,6 +61,19 @@ public class FlightDashboardController implements Initializable {
 	}
 
 	@FXML
+	protected void launchAdminPage() {
+		try {
+			this.navigator.push(UserDump.getScene());
+		} catch (IOException e) {
+			System.err.println("Error loading admin page!");
+			System.err.println(e.getMessage());
+			for (int i = 0; i < e.getStackTrace().length; i++) {
+				System.err.println(e.getStackTrace()[i].toString());
+			}
+		}
+	}
+
+	@FXML
 	private Label username;
 
 	@FXML
@@ -63,4 +87,7 @@ public class FlightDashboardController implements Initializable {
 
 	@FXML
 	private Button exitButton;
+
+	@FXML
+	private Button adminButton;
 }

@@ -121,6 +121,14 @@ public class UserDump implements Initializable {
 			}
 		});
 
+//		this.deleteUserColumn.setCellFactory(new Callback<TableColumn<User, Boolean>, TableCell<User, Boolean>>() {
+//			@Override
+//			public TableCell<User, Boolean> call(TableColumn<User, Boolean> z) {
+//				return null;
+//			}
+//		});
+
+//		Populate the table with content
 		this.refresh();
 	}
 
@@ -178,14 +186,14 @@ public class UserDump implements Initializable {
 	private TableColumn<User, Boolean> isAdminColumn;
 
 	@FXML
+	private TableColumn<User,Boolean> deleteUserColumn;
+
+	@FXML
 	private Button button;
 }
 
-//class CheckBoxTableCell<S,T> extends TableCell<S,Boolean> {
-//	private final CheckBox checkBox;
+//class ButtonTableCell<S,T> extends TableCell<S,Boolean> {
+//	private final
 //
-//	public CheckBoxTableCell(final ObservableValue<Boolean> selectedProperty) {
-//		this.checkBox=new CheckBox();
-//		this.checkBox.selectedProperty().bindBidirectional(selectedProperty);
-//	}
+//	public ButtonTableCell() {}
 //}

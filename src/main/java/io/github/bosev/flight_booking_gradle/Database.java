@@ -86,6 +86,9 @@ public class Database {
 	public static final String removeAdminSql ="UPDATE Users SET isadmin=0 WHERE user_id=?";
 	public PreparedStatement removeAdminPreparedStmt;
 
+	public static final String deleteUserSql="DELETE FROM Users WHERE user_id=?";
+	public PreparedStatement deleteUserStmt;
+
 	private static String wrapSql(String sqlStatement) {
 		String sql=sqlStatement.replace("'","''");
 		sql=sql.replace(";","");
@@ -140,6 +143,7 @@ public class Database {
 		this.userGetAllPreparedStmt=this.connection.prepareStatement(userGetAll);
 		this.makeAdminPreparedStmt=this.connection.prepareStatement(makeAdminSql);
 		this.removeAdminPreparedStmt=this.connection.prepareStatement(removeAdminSql);
+		this.deleteUserStmt=this.connection.prepareStatement(deleteUserSql);
 	}
 
 	public void insertUser(String name,String password, String email, String phoneNumber,boolean isAdmin) throws SQLException {
@@ -182,6 +186,12 @@ public class Database {
 	}
 
 	public void removeAdmin(int userId) throws SQLException {
+		this.removeAdminPreparedStmt.setInt(1,userId);
+		this.removeAdminPreparedStmt.execute();
+		return;
+	}
+
+	public void deleteUser(int userId) throws SQLException {
 		this.removeAdminPreparedStmt.setInt(1,userId);
 		this.removeAdminPreparedStmt.execute();
 		return;
