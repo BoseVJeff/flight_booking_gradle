@@ -85,7 +85,7 @@
    <left>
       <VBox prefHeight="200.0" prefWidth="250.0" BorderPane.alignment="CENTER">
          <children>
-            <MediaView fx:id="mediaView" fitHeight="360.0" fitWidth="250.0" />
+            <MediaView fx:id="leftMediaView" fitHeight="360.0" fitWidth="250.0" onError="#mediaErrorHandler" />
             <Button mnemonicParsing="false" text="Play">
                <VBox.margin>
                   <Insets left="100.0" top="8.0" />

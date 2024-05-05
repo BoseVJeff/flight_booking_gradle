@@ -57,24 +57,6 @@ public class UserDump implements Initializable {
 				return new SimpleBooleanProperty(userList.get(index).isAdmin);
 			}
 		});
-////		CheckBoxTableCell<User,Boolean> checkBoxTableCell=CheckBoxTableCell.forTableColumn(this.isAdminColumn);
-////		This is a two-way binding to the value returned by the `call` method.
-//		checkBoxTableCell.setSelectedStateCallback(new Callback<Integer, ObservableValue<Boolean>>() {
-//			@Override
-//			public ObservableValue<Boolean> call(Integer index) {
-////				`index` is index of
-//				System.out.println(index);
-//				return new SimpleBooleanProperty();
-//			}
-//		});
-//		this.isAdminColumn.setCellFactory(new Callback<TableColumn<User, Boolean>, TableCell<User, Boolean>>() {
-//			private CheckBox checkBox=new CheckBox();
-//
-//			@Override
-//			public TableCell<User, Boolean> call(TableColumn<User, Boolean> param) {
-//				return null;
-//			}
-//		});
 
 		this.isAdminColumn.setCellFactory(new Callback<TableColumn<User, Boolean>, TableCell<User, Boolean>>() {
 			@Override
@@ -118,6 +100,20 @@ public class UserDump implements Initializable {
 						return isAdminProperty;
 					}
 				});
+			}
+		});
+
+		this.deleteUserColumn.setCellValueFactory(new PropertyValueFactory<>("isAdmin"));
+
+		this.deleteUserColumn.setCellFactory(new Callback<TableColumn<User, Boolean>, TableCell<User, Boolean>>() {
+			@Override
+			public TableCell<User, Boolean> call(TableColumn<User, Boolean> tc) {
+				final TableCell<User,Boolean> cell=new TableCell<>() {
+					final Button deleteBtn=new Button("Delete!");
+
+
+				};
+				return cell;
 			}
 		});
 

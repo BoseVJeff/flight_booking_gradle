@@ -7,7 +7,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -29,6 +33,14 @@ public class FlightDashboardController implements Initializable {
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		this.username.setText(appState.user.name);
+
+		try {
+			Media media=new Media("file:src/main/resources/io/github/bosev/flight_booking_gradle/dashboard_video.mp4");
+			MediaPlayer mediaPlayer=new MediaPlayer(media);
+			mediaPlayer.setAutoPlay(true);
+			this.leftMediaView.setMediaPlayer(mediaPlayer);
+		} catch (Exception e) {}
+
 		System.out.println(appState.user.isAdmin);
 		try {
 			this.adminButton.visibleProperty().bind(new SimpleBooleanProperty(appState.user.isAdmin));
@@ -39,6 +51,11 @@ public class FlightDashboardController implements Initializable {
 				System.err.println(e.getStackTrace()[i].toString());
 			}
 		}
+	}
+
+	@FXML
+	protected void mediaErrorHandler() {
+		System.out.println("Media playback error!");
 	}
 
 	@FXML
@@ -90,4 +107,7 @@ public class FlightDashboardController implements Initializable {
 
 	@FXML
 	private Button adminButton;
+
+	@FXML
+	private MediaView leftMediaView;
 }
