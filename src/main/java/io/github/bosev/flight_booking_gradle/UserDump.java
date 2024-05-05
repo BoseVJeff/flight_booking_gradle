@@ -74,7 +74,9 @@ public class UserDump implements Initializable {
 //									User is currently an admin, remove him from this position
 									try {
 										database.removeAdmin(user.id);
+										errorLabel.setText(user.name+" is no longer admin!");
 									} catch (SQLException e) {
+										errorLabel.setText("Error removing "+user.name+" as admin!");
 										System.err.println("SQL error unsetting users as admin!");
 										System.err.println(e.getMessage());
 										for (int i = 0; i < e.getStackTrace().length; i++) {
@@ -85,16 +87,17 @@ public class UserDump implements Initializable {
 //									User is currently not an admin, make 'em one
 									try {
 										database.makeAdmin(user.id);
+										errorLabel.setText(user.name+" is now an admin!");
 									} catch (SQLException e) {
-										System.err.println("SQL error unsetting users as admin!");
+										errorLabel.setText("Error setting "+user.name+" as admin!");
+										System.err.println("SQL error setting users as admin!");
 										System.err.println(e.getMessage());
 										for (int i = 0; i < e.getStackTrace().length; i++) {
 											System.err.println(e.getStackTrace()[i].toString());
 										}
 									}
 								}
-								System.out.println("Changed value of id "+user.id+" from "+oldValue+" to "+newValue);
-
+//								System.out.println("Changed value of id "+user.id+" from "+oldValue+" to "+newValue);
 							}
 						});
 						return isAdminProperty;
