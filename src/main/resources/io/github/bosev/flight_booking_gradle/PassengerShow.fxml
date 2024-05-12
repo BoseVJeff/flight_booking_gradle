@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.bosev.flight_booking_gradle.PassengerShowController">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" StackPane.alignment="CENTER">
+               <image>
+                  <Image url="@Login_background.png" />
+               </image></ImageView>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="passengerTableView" prefHeight="350.0" prefWidth="600.0">
+                    <columns>
+                      <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+                        <TableColumn fx:id="ageColumn" prefWidth="75.0" text="Age" />
+                        <TableColumn fx:id="genderColumn" prefWidth="75.0" text="Gender" />
+                      <TableColumn fx:id="idTypeColumn" prefWidth="75.0" text="ID Type" />
+                        <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID No." />
+                        <TableColumn fx:id="seatColumn" prefWidth="75.0" text="Seat No" />
+                    </columns>
+                  </TableView>
+                  <HBox prefHeight="50.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="addPassengerButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Add Passenger" textAlignment="CENTER" />
+                        <Label fx:id="messageLabel" prefHeight="50.0" prefWidth="375.0" text="Add Passengers" textAlignment="CENTER" />
+                        <Button fx:id="paymentButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="Proceed to Payment" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

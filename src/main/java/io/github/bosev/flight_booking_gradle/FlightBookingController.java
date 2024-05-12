@@ -22,6 +22,7 @@ import java.util.ResourceBundle;
 public class FlightBookingController implements Initializable {
 	private Database database;
 	private AppState appState;
+	private Navigator navigator;
 	private ObservableList<String> fromCities= FXCollections.observableArrayList();
 	private String selectedFromCity=null;
 	private ObservableList<String> toCities=FXCollections.observableArrayList();
@@ -31,6 +32,7 @@ public class FlightBookingController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.appState=AppState.getInstance();
+		this.navigator=Navigator.getInstance();
 
 		this.usernameLabel.setText(this.appState.user.name);
 
@@ -126,6 +128,17 @@ public class FlightBookingController implements Initializable {
 				while(c.next()) {
 					for (TablePosition tablePosition : c.getAddedSubList()) {
 						System.out.println("Selected flight"+flights.get(tablePosition.getRow()).flightName);
+						appState.selectedFlight=flights.get(tablePosition.getRow());
+						try {
+							navigator.push(PassengerShowController.getScene());
+						} catch (IOException e) {
+							System.err.println("["+this.getClass().getName()+"] "+"Unable to load PassengerShowController!");
+							System.err.println(e.getMessage());
+							for (int i = 0; i < e.getStackTrace().length; i++) {
+								System.err.println(e.getStackTrace()[i].toString());
+							}
+						}
+
 					}
 				}
 			}

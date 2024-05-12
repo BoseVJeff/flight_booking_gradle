@@ -4,8 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Passenger {
-	public int id;
-	public String name;
+	public int passengerId;
+	public String passengerName;
 	public String idType;
 	public String idId;
 	public String flightNo;
@@ -15,22 +15,22 @@ public class Passenger {
 	public int age;
 	public Gender gender;
 
-	public Passenger(int id, String name, String idType, String idId, String flightNo, int seatNo, String notes, String paymentId, int age, Gender gender) {
-		this.id = id;
-		this.name = name;
+	public Passenger(String name, String idType, String idId, String flightNo, int seatNo, String notes, int age, Gender gender) {
+		this.passengerId = -1;
+		this.passengerName = name;
 		this.idType = idType;
 		this.idId = idId;
 		this.flightNo = flightNo;
 		this.seatNo = seatNo;
 		this.notes = notes;
-		this.paymentId = paymentId;
+		this.paymentId = null;
 		this.age = age;
 		this.gender = gender;
 	}
 
 	public Passenger(ResultSet resultSet) throws SQLException {
-			this.id= resultSet.getInt("passenger_id");
-			this.name=resultSet.getString("name");
+			this.passengerId = resultSet.getInt("passenger_id");
+			this.passengerName =resultSet.getString("name");
 			this.idType=resultSet.getString("identification_type");
 			this.idId=resultSet.getString("identification_id");
 			this.flightNo=resultSet.getString("flight_no");
@@ -39,5 +39,45 @@ public class Passenger {
 			this.paymentId=resultSet.getString("payment_id");
 			this.age=resultSet.getInt("age");
 			this.gender=Gender.valueOf(resultSet.getString("gender"));
+	}
+
+	public int getPassengerId() {
+		return passengerId;
+	}
+
+	public String getPassengerName() {
+		return passengerName;
+	}
+
+	public String getIdType() {
+		return idType;
+	}
+
+	public String getIdId() {
+		return idId;
+	}
+
+	public String getFlightNo() {
+		return flightNo;
+	}
+
+	public int getSeatNo() {
+		return seatNo;
+	}
+
+	public String getNotes() {
+		return notes;
+	}
+
+	public String getPaymentId() {
+		return paymentId;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public Gender getGender() {
+		return gender;
 	}
 }

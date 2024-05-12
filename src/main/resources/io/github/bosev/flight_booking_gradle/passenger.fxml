@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="750.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="750.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.bosev.flight_booking_gradle.PassengerController">
    <children>
       <VBox prefHeight="300.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
          <children>
@@ -100,7 +100,7 @@
       </HBox>
       <HBox prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="127.0">
          <children>
-            <TextField fx:id="username" promptText="Passenger Name" />
+            <TextField fx:id="passengerName" promptText="Passenger Name" />
          </children></HBox>
       <HBox layoutX="20.0" layoutY="140.0" prefHeight="20.0" prefWidth="110.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="167.0">
          <children>
@@ -116,7 +116,7 @@
       </HBox>
       <HBox layoutX="140.0" layoutY="137.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="167.0">
          <children>
-            <TextField fx:id="username1" promptText="Identity Type" />
+            <TextField fx:id="idType" promptText="Identity Type" />
          </children>
       </HBox>
       <HBox layoutX="20.0" layoutY="177.0" prefHeight="20.0" prefWidth="110.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="207.0">
@@ -133,7 +133,7 @@
       </HBox>
       <HBox layoutX="140.0" layoutY="177.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="207.0">
          <children>
-            <TextField fx:id="username11" promptText="Document Id" />
+            <TextField fx:id="idId" promptText="Document Id" />
          </children>
       </HBox>
       <HBox layoutX="20.0" layoutY="217.0" prefHeight="20.0" prefWidth="60.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="247.0">
@@ -150,7 +150,7 @@
       </HBox>
       <HBox layoutX="140.0" layoutY="217.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="247.0">
          <children>
-            <TextField fx:id="username111" promptText="Seat No." />
+            <Button fx:id="seatButton" mnemonicParsing="false" text="Select Seat" />
          </children>
       </HBox>
       <HBox layoutX="70.0" layoutY="257.0" prefHeight="20.0" prefWidth="40.0" AnchorPane.leftAnchor="82.0" AnchorPane.topAnchor="287.0">
@@ -167,7 +167,7 @@
       </HBox>
       <HBox layoutX="140.0" layoutY="257.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="287.0">
          <children>
-            <TextField fx:id="username1111" promptText="Enter Your Age" />
+            <Spinner fx:id="ageSpinner" editable="true" />
          </children>
       </HBox>
       <HBox layoutX="92.0" layoutY="297.0" prefHeight="20.0" prefWidth="60.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="327.0">
@@ -184,11 +184,14 @@
       </HBox>
       <HBox layoutX="140.0" layoutY="297.0" prefHeight="20.0" prefWidth="250.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="327.0">
          <children>
-            <RadioButton mnemonicParsing="false" text="MALE">
+            <RadioButton fx:id="maleToggle" mnemonicParsing="false" text="MALE">
                <font>
                   <Font name="Times New Roman Italic" size="13.0" />
-               </font></RadioButton>
-            <RadioButton layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="FEMALE">
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="gender" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="femaleToggle" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="FEMALE" toggleGroup="$gender">
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>
@@ -196,7 +199,7 @@
                   <Font name="Times New Roman Italic" size="13.0" />
                </font>
             </RadioButton>
-            <RadioButton layoutX="82.0" layoutY="10.0" mnemonicParsing="false" text="OTHERS">
+            <RadioButton fx:id="otherToggle" layoutX="82.0" layoutY="10.0" mnemonicParsing="false" text="OTHER" toggleGroup="$gender">
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>
@@ -220,7 +223,7 @@
       </HBox>
       <HBox layoutX="140.0" layoutY="257.0" prefHeight="20.0" prefWidth="150.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="367.0">
          <children>
-            <TextArea prefHeight="200.0" prefWidth="200.0">
+            <TextArea fx:id="remarksArea" prefHeight="200.0" prefWidth="200.0">
                <font>
                   <Font size="13.0" />
                </font>
@@ -229,7 +232,7 @@
       </HBox>
       <HBox prefHeight="50.0" prefWidth="125.0" AnchorPane.leftAnchor="460.0" AnchorPane.topAnchor="360.0">
          <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text=" ADD Passenger">
+            <Button fx:id="addButton" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text=" ADD Passenger">
                <font>
                   <Font name="Times New Roman Bold Italic" size="14.0" />
                </font></Button>
@@ -237,7 +240,7 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="180.0" AnchorPane.leftAnchor="325.0">
          <children>
-            <Label alignment="CENTER" maxWidth="-Infinity" prefWidth="180.0" text="Username">
+            <Label fx:id="usernameLabel" alignment="CENTER" maxWidth="-Infinity" prefWidth="180.0" text="Username">
                <HBox.margin>
                   <Insets top="35.0" />
                </HBox.margin>
