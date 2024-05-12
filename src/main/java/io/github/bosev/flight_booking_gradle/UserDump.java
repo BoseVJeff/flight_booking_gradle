@@ -3,6 +3,7 @@ package io.github.bosev.flight_booking_gradle;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -57,24 +58,6 @@ public class UserDump implements Initializable {
 				return new SimpleBooleanProperty(userList.get(index).isAdmin);
 			}
 		});
-////		CheckBoxTableCell<User,Boolean> checkBoxTableCell=CheckBoxTableCell.forTableColumn(this.isAdminColumn);
-////		This is a two-way binding to the value returned by the `call` method.
-//		checkBoxTableCell.setSelectedStateCallback(new Callback<Integer, ObservableValue<Boolean>>() {
-//			@Override
-//			public ObservableValue<Boolean> call(Integer index) {
-////				`index` is index of
-//				System.out.println(index);
-//				return new SimpleBooleanProperty();
-//			}
-//		});
-//		this.isAdminColumn.setCellFactory(new Callback<TableColumn<User, Boolean>, TableCell<User, Boolean>>() {
-//			private CheckBox checkBox=new CheckBox();
-//
-//			@Override
-//			public TableCell<User, Boolean> call(TableColumn<User, Boolean> param) {
-//				return null;
-//			}
-//		});
 
 		this.isAdminColumn.setCellFactory(new Callback<TableColumn<User, Boolean>, TableCell<User, Boolean>>() {
 			@Override
@@ -92,7 +75,9 @@ public class UserDump implements Initializable {
 //									User is currently an admin, remove him from this position
 									try {
 										database.removeAdmin(user.id);
+										errorLabel.setText(user.name+" is no longer admin!");
 									} catch (SQLException e) {
+										errorLabel.setText("Error removing "+user.name+" as admin!");
 										System.err.println("SQL error unsetting users as admin!");
 										System.err.println(e.getMessage());
 										for (int i = 0; i < e.getStackTrace().length; i++) {
@@ -103,16 +88,17 @@ public class UserDump implements Initializable {
 //									User is currently not an admin, make 'em one
 									try {
 										database.makeAdmin(user.id);
+										errorLabel.setText(user.name+" is now an admin!");
 									} catch (SQLException e) {
-										System.err.println("SQL error unsetting users as admin!");
+										errorLabel.setText("Error setting "+user.name+" as admin!");
+										System.err.println("SQL error setting users as admin!");
 										System.err.println(e.getMessage());
 										for (int i = 0; i < e.getStackTrace().length; i++) {
 											System.err.println(e.getStackTrace()[i].toString());
 										}
 									}
 								}
-								System.out.println("Changed value of id "+user.id+" from "+oldValue+" to "+newValue);
-
+//								System.out.println("Changed value of id "+user.id+" from "+oldValue+" to "+newValue);
 							}
 						});
 						return isAdminProperty;
@@ -121,6 +107,43 @@ public class UserDump implements Initializable {
 			}
 		});
 
+		this.deleteUserColumn.setCellValueFactory(new PropertyValueFactory<>("isAdmin"));
+
+		this.deleteUserColumn.setCellFactory(new Callback<TableColumn<User, Boolean>, TableCell<User, Boolean>>() {
+			@Override
+			public TableCell<User, Boolean> call(TableColumn<User, Boolean> tc) {
+				final TableCell<User,Boolean> cell=new TableCell<>() {
+					final Button deleteBtn=new Button("Delete!");
+
+
+				};
+				return cell;
+			}
+		});
+
+//		this.deleteUserColumn.setCellFactory(new Callback<TableColumn<User, Boolean>, TableCell<User, Boolean>>() {
+//			@Override
+//			public TableCell<User, Boolean> call(TableColumn<User, Boolean> z) {
+//				return null;
+//			}
+//		});
+
+		this.tableView.getSelectionModel().getSelectedCells().addListener(new ListChangeListener<TablePosition>() {
+			@Override
+			public void onChanged(Change<? extends TablePosition> c) {
+				while(c.next()) {
+					System.out.println(c);
+					System.out.println("Added: "+c.getAddedSize());
+					System.out.println("Removed: "+c.getRemovedSize());
+					for (TablePosition tablePosition : c.getAddedSubList()) {
+						System.out.println("Table Row: "+tablePosition.getRow());
+						System.out.println("Selelcted user "+userList.get(tablePosition.getRow()).name);
+					}
+				}
+			}
+		});
+
+//		Populate the table with content
 		this.refresh();
 	}
 
@@ -178,14 +201,14 @@ public class UserDump implements Initializable {
 	private TableColumn<User, Boolean> isAdminColumn;
 
 	@FXML
+	private TableColumn<User,Boolean> deleteUserColumn;
+
+	@FXML
 	private Button button;
 }
 
-//class CheckBoxTableCell<S,T> extends TableCell<S,Boolean> {
-//	private final CheckBox checkBox;
+//class ButtonTableCell<S,T> extends TableCell<S,Boolean> {
+//	private final
 //
-//	public CheckBoxTableCell(final ObservableValue<Boolean> selectedProperty) {
-//		this.checkBox=new CheckBox();
-//		this.checkBox.selectedProperty().bindBidirectional(selectedProperty);
-//	}
+//	public ButtonTableCell() {}
 //}

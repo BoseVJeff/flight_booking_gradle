@@ -12,6 +12,7 @@
             <TableColumn fx:id="emailColumn" prefWidth="75.0" text="email" />
             <TableColumn fx:id="phoneColumn" prefWidth="75.0" text="phone number" />
             <TableColumn fx:id="isAdminColumn" prefWidth="75.0" text="is admin" />
+            <TableColumn fx:id="deleteUserColumn" prefWidth="75.0" text="Action" />
         </columns>
       </TableView>
       <Label fx:id="errorLabel" layoutX="33.0" layoutY="357.0" text="Hello!" />
