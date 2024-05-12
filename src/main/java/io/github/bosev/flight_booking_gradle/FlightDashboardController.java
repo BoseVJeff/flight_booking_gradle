@@ -20,7 +20,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class FlightDashboardController implements Initializable {
+public class FlightDashboardController extends FxSceneBase implements Initializable {
 	private Navigator navigator;
 	private AppState appState;
 
@@ -93,7 +93,13 @@ public class FlightDashboardController implements Initializable {
 	}
 
 	@FXML
-	protected void viewTicketsButtonAction() {}
+	protected void viewTicketsButtonAction() {
+		try {
+			navigator.push(AllTicketsController.getScene());
+		} catch (IOException e) {
+			logException(e,"Error loading all tickets page!");
+		}
+	}
 
 	@FXML
 	protected void signupButtonAction() {

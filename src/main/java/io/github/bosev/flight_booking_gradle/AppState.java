@@ -20,6 +20,9 @@ public class AppState {
 
 	public SimpleIntegerProperty seatObs=new SimpleIntegerProperty(-1);
 
+	public Passenger selectedTicket;
+	public Flight selectedTicketFlight;
+
 	public static AppState getInstance() {
 		if(instance==null) {
 			instance=new AppState();

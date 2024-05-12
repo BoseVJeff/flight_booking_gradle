@@ -104,6 +104,12 @@ public class Database {
 	public static final String addPassengerSql="INSERT INTO Passengers (name, identification_type, identification_id, flight_no, seat_no, user_id, notes, payment_id, age, gender) VALUES (?,?,?,?,?,?,?,?,?,?)";
 	public PreparedStatement addPassengerStmt;
 
+	public static final String getTicketsSql="SELECT * FROM Passengers WHERE user_id=?";
+	public PreparedStatement getTicketsStmt;
+
+	public static final String getFlightByIdSql ="SELECT * FROM Flights WHERE flight_no=?";
+	public PreparedStatement getFlightByIdStmt;
+
 
 	private static String wrapSql(String sqlStatement) {
 		String sql=sqlStatement.replace("'","''");
@@ -165,6 +171,8 @@ public class Database {
 		this.getDestinationCitiesStmt=this.connection.prepareStatement(getDestinationCitiesSql);
 		this.getBookedSeatsStmt=this.connection.prepareStatement(getBookedSeatsSql);
 		this.addPassengerStmt=this.connection.prepareStatement(addPassengerSql);
+		this.getTicketsStmt=this.connection.prepareStatement(getTicketsSql);
+		this.getFlightByIdStmt =this.connection.prepareStatement(getFlightByIdSql);
 	}
 
 	public void insertUser(String name,String password, String email, String phoneNumber,boolean isAdmin) throws SQLException {
@@ -256,6 +264,16 @@ public class Database {
 		return flightArrayList;
 	}
 
+	public Flight getFlightById(int id) throws SQLException {
+		this.getFlightByIdStmt.setInt(1,id);
+
+		ResultSet resultSet=this.getFlightByIdStmt.executeQuery();
+
+		resultSet.next();
+		return new Flight(resultSet);
+
+	}
+
 	public ArrayList<Integer> getBookedSeats(int flightNo) throws SQLException {
 		ArrayList<Integer> seatsList=new ArrayList<>();
 
@@ -282,6 +300,19 @@ public class Database {
 		this.addPassengerStmt.setString(10,passenger.gender.toString());
 
 		this.addPassengerStmt.execute();
+	}
+
+	public ArrayList<Passenger> getTickets(int userId) throws SQLException {
+		ArrayList<Passenger> passengers=new ArrayList<>();
+
+		this.getTicketsStmt.setInt(1,userId);
+		ResultSet resultSet=this.getTicketsStmt.executeQuery();
+
+		while (resultSet.next()) {
+			passengers.add(new Passenger(resultSet));
+		}
+
+		return passengers;
 	}
 
 	public void test() throws SQLException {

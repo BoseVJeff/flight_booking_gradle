@@ -61,7 +61,7 @@
     </HBox>
     <HBox prefHeight="30.0" prefWidth="180.0" AnchorPane.leftAnchor="420.0" AnchorPane.topAnchor="70.0">
         <children>
-            <Label alignment="CENTER" prefWidth="200.0" text="Username">
+            <Label fx:id="username" alignment="CENTER" prefWidth="200.0" text="Username">
                 <font>
                     <Font name="Impact" size="20.0" />
                 </font>
@@ -213,7 +213,7 @@
       <children>
          <HBox maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0">
             <children>
-               <Label text="Passenger_name" />
+               <Label fx:id="passengerName" text="Passenger_name" />
             </children>
             <VBox.margin>
                <Insets />
@@ -221,7 +221,7 @@
          </HBox>
          <HBox layoutX="20.0" layoutY="10.0" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0">
             <children>
-               <Label text="xxxxxxxxxx">
+               <Label fx:id="phoneNo" text="xxxxxxxxxx">
                   <HBox.margin>
                      <Insets />
                   </HBox.margin>
@@ -233,7 +233,7 @@
          </HBox>
          <HBox layoutX="20.0" layoutY="40.0" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0">
             <children>
-               <Label text="abc@gmail.com">
+               <Label fx:id="email" text="abc@gmail.com">
                   <HBox.margin>
                      <Insets />
                   </HBox.margin>
@@ -245,7 +245,7 @@
          </HBox>
          <HBox layoutX="10.0" layoutY="70.0" maxWidth="-Infinity" prefHeight="30.0" prefWidth="110.0">
             <children>
-               <Label text="document_type" />
+               <Label fx:id="idType" text="document_type" />
             </children>
             <VBox.margin>
                <Insets />
@@ -253,7 +253,7 @@
          </HBox>
          <HBox layoutX="10.0" layoutY="100.0" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0">
             <children>
-               <Label text="Identification_id">
+               <Label fx:id="idId" text="Identification_id">
                   <HBox.margin>
                      <Insets left="4.0" />
                   </HBox.margin>
@@ -265,7 +265,7 @@
          </HBox>
          <HBox layoutX="10.0" layoutY="130.0" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0">
             <children>
-               <Label text="xxxxxxxxxx">
+               <Label fx:id="seatNo" text="xxxxxxxxxx">
                   <HBox.margin>
                      <Insets />
                   </HBox.margin>
@@ -277,7 +277,7 @@
          </HBox>
          <HBox layoutX="10.0" layoutY="130.0" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0">
             <children>
-               <Label text="xxxxxxxxxx" />
+               <Label fx:id="age" text="xxxxxxxxxx" />
             </children>
             <VBox.margin>
                <Insets />
@@ -285,7 +285,7 @@
          </HBox>
          <HBox layoutX="10.0" layoutY="190.0" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0">
             <children>
-               <Label text="M/F/O">
+               <Label fx:id="gender" text="M/F/O">
                   <HBox.margin>
                      <Insets />
                   </HBox.margin>
@@ -408,7 +408,7 @@
       <children>
          <HBox maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0">
             <children>
-               <Label text="flight_name" />
+               <Label fx:id="flightName" text="flight_name" />
             </children>
             <VBox.margin>
                <Insets />
@@ -416,7 +416,7 @@
          </HBox>
          <HBox layoutX="20.0" layoutY="10.0" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0">
             <children>
-               <Label text="xxxxxxxxxx">
+               <Label fx:id="flightNo" text="xxxxxxxxxx">
                   <HBox.margin>
                      <Insets />
                   </HBox.margin>
@@ -428,7 +428,7 @@
          </HBox>
          <HBox layoutX="20.0" layoutY="40.0" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0">
             <children>
-               <Label text="source">
+               <Label fx:id="flightSource" text="source">
                   <HBox.margin>
                      <Insets />
                   </HBox.margin>
@@ -440,7 +440,7 @@
          </HBox>
          <HBox layoutX="10.0" layoutY="70.0" maxWidth="-Infinity" prefHeight="30.0" prefWidth="110.0">
             <children>
-               <Label text="destination" />
+               <Label fx:id="flightDestination" text="destination" />
             </children>
             <VBox.margin>
                <Insets />
@@ -448,7 +448,7 @@
          </HBox>
          <HBox layoutX="10.0" layoutY="100.0" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0">
             <children>
-               <Label text="xx : xx (AM / PM)">
+               <Label fx:id="arrivalTime" text="xx : xx (AM / PM)">
                   <HBox.margin>
                      <Insets left="4.0" />
                   </HBox.margin>
@@ -460,7 +460,7 @@
          </HBox>
          <HBox layoutX="10.0" layoutY="130.0" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0">
             <children>
-               <Label text="xx : xx (AM / PM)">
+               <Label fx:id="departureTime" text="xx : xx (AM / PM)">
                   <HBox.margin>
                      <Insets />
                   </HBox.margin>
@@ -472,7 +472,7 @@
          </HBox>
          <HBox layoutX="10.0" layoutY="130.0" maxWidth="-Infinity" prefHeight="30.0" prefWidth="100.0">
             <children>
-               <Label text="xxxxxxxxxx" />
+               <Label fx:id="ticketPrice" text="xxxxxxxxxx" />
             </children>
             <VBox.margin>
                <Insets />
@@ -482,7 +482,7 @@
    </VBox>
    <HBox layoutX="10.0" layoutY="110.0" prefHeight="50.0" prefWidth="300.0" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="450.0">
       <children>
-         <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Back to Dashboard" underline="true">
+         <Button fx:id="backButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Back to Dashboard" underline="true">
             <HBox.margin>
                <Insets left="140.0" top="5.0" />
             </HBox.margin>

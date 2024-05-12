@@ -132,7 +132,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                         </Button>
-                        <Button fx:id="viewTicketsButton" layoutX="130.0" layoutY="170.0" mnemonicParsing="false" text="Tickets" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="90.0">
+                        <Button fx:id="viewTicketsButton" layoutX="130.0" layoutY="170.0" mnemonicParsing="false" onAction="#viewTicketsButtonAction" text="Tickets" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="90.0">
                            <font>
                               <Font name="Verdana Bold Italic" size="18.0" />
                            </font>
