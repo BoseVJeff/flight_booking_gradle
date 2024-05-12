@@ -28,4 +28,10 @@ public class AppState {
 	}
 
 	private AppState() {}
+
+	public void setPaymentId(String id) {
+		for (Passenger passenger : passengers) {
+			passenger.paymentId=id;
+		}
+	}
 }

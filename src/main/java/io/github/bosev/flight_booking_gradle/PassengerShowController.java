@@ -88,5 +88,20 @@ public class PassengerShowController extends FxSceneBase implements Initializabl
 		} catch (Exception e) {
 			logException(e,"Table Error!");
 		}
+
+		try {
+			this.paymentButton.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					try {
+						navigator.push(PaymentController.getScene());
+					} catch (IOException e) {
+						logException(e,"Unable to load PaymentController!");
+					}
+				}
+			});
+		} catch (Exception e) {
+			logException(e,"Unable to set paymentButton handler!");
+		}
 	}
 }

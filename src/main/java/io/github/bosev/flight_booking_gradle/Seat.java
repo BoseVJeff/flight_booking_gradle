@@ -18,6 +18,7 @@ import javafx.scene.text.Text;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class Seat extends FxSceneBase implements Initializable {
@@ -56,6 +57,12 @@ public class Seat extends FxSceneBase implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		int numSeats=appState.selectedFlight.maxCapacity;
+		ArrayList<Integer> bookedSeats=new ArrayList<>();
+		try {
+			bookedSeats=database.getBookedSeats(appState.selectedFlight.no);
+		} catch (SQLException e) {
+			logException(e,"SQL Error: Unable to get booked seats!");
+		}
 
 		GridPane gridPane=new GridPane();
 		int rowIndex=0;
@@ -73,18 +80,22 @@ public class Seat extends FxSceneBase implements Initializable {
 					Button btn1 = new Button(Integer.toString(numSeats));
 					btn1.setPrefWidth(btnWidth);
 					btn1.setOnAction(btnHandler(numSeats));
+					btn1.setDisable(bookedSeats.contains(numSeats));
 
 					Button btn2 = new Button(Integer.toString(numSeats - 1));
 					btn2.setPrefWidth(btnWidth);
 					btn2.setOnAction(btnHandler(numSeats-1));
+					btn2.setDisable(bookedSeats.contains(numSeats-1));
 
 					Button btn3 = new Button(Integer.toString(numSeats - 2));
 					btn3.setPrefWidth(btnWidth);
 					btn3.setOnAction(btnHandler(numSeats-2));
+					btn3.setDisable(bookedSeats.contains(numSeats-2));
 
 					Button btn4 = new Button(Integer.toString(numSeats - 3));
 					btn4.setPrefWidth(btnWidth);
 					btn4.setOnAction(btnHandler(numSeats-3));
+					btn4.setDisable(bookedSeats.contains(numSeats-3));
 
 					gridPane.addRow(rowIndex, btn1, btn2, btn3, btn4);
 					numSeats-=4;
@@ -94,14 +105,17 @@ public class Seat extends FxSceneBase implements Initializable {
 					Button btn1 = new Button(Integer.toString(numSeats));
 					btn1.setPrefWidth(btnWidth);
 					btn1.setOnAction(btnHandler(numSeats));
+					btn1.setDisable(bookedSeats.contains(numSeats));
 
 					Button btn2 = new Button(Integer.toString(numSeats - 1));
 					btn2.setPrefWidth(btnWidth);
 					btn2.setOnAction(btnHandler(numSeats-1));
+					btn2.setDisable(bookedSeats.contains(numSeats-1));
 
 					Button btn3 = new Button(Integer.toString(numSeats - 2));
 					btn3.setPrefWidth(btnWidth);
 					btn3.setOnAction(btnHandler(numSeats-2));
+					btn3.setDisable(bookedSeats.contains(numSeats-2));
 
 					gridPane.addRow(rowIndex,btn1,btn2,eSlt1,btn3);
 					numSeats-=3;
@@ -110,10 +124,12 @@ public class Seat extends FxSceneBase implements Initializable {
 					Button btn1 = new Button(Integer.toString(numSeats));
 					btn1.setPrefWidth(btnWidth);
 					btn1.setOnAction(btnHandler(numSeats));
+					btn1.setDisable(bookedSeats.contains(numSeats));
 
 					Button btn2 = new Button(Integer.toString(numSeats - 1));
 					btn2.setPrefWidth(btnWidth);
 					btn2.setOnAction(btnHandler(numSeats-1));
+					btn2.setDisable(bookedSeats.contains(numSeats-1));
 
 					gridPane.addRow(rowIndex,btn1,eSlt1,eSlt2,btn2);
 					numSeats-=2;
@@ -122,6 +138,7 @@ public class Seat extends FxSceneBase implements Initializable {
 					Button btn1 = new Button(Integer.toString(numSeats));
 					btn1.setPrefWidth(btnWidth);
 					btn1.setOnAction(btnHandler(numSeats));
+					btn1.setDisable(bookedSeats.contains(numSeats));
 
 					gridPane.addRow(rowIndex,btn1,eSlt1,eSlt2,eSlt3);
 					numSeats-=1;

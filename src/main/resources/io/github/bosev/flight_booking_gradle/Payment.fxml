@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.bosev.flight_booking_gradle.PaymentController">
+   <children>
+      <Button fx:id="payButton" mnemonicParsing="false" text="Pay" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="275.0" AnchorPane.topAnchor="180.0" />
+   </children>
+</AnchorPane>
