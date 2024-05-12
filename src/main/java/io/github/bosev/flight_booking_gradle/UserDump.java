@@ -3,6 +3,7 @@ package io.github.bosev.flight_booking_gradle;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -126,6 +127,21 @@ public class UserDump implements Initializable {
 //				return null;
 //			}
 //		});
+
+		this.tableView.getSelectionModel().getSelectedCells().addListener(new ListChangeListener<TablePosition>() {
+			@Override
+			public void onChanged(Change<? extends TablePosition> c) {
+				while(c.next()) {
+					System.out.println(c);
+					System.out.println("Added: "+c.getAddedSize());
+					System.out.println("Removed: "+c.getRemovedSize());
+					for (TablePosition tablePosition : c.getAddedSubList()) {
+						System.out.println("Table Row: "+tablePosition.getRow());
+						System.out.println("Selelcted user "+userList.get(tablePosition.getRow()).name);
+					}
+				}
+			}
+		});
 
 //		Populate the table with content
 		this.refresh();

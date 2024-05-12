@@ -28,7 +28,15 @@ public class HelloApplication extends Application {
 			}
 		}
 //		navigator.push(HelloController.getScene());
-		navigator.push(LoginController.getScene());
+		try {
+			navigator.push(LoginController.getScene());
+		} catch (IOException e) {
+			System.err.println("Error loading Login page!");
+			System.err.println(e.getMessage());
+			for (int i = 0; i < e.getStackTrace().length; i++) {
+				System.err.println(e.getStackTrace()[i].toString());
+			}
+		}
 //		navigator.push(UserDump.getScene());
 	}
 

@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 public class Flight {
 	public String no;
-	public String name;
+	public String flightName;
 	public String airline;
 	public String source;
 	public String destination;
@@ -25,7 +25,7 @@ public class Flight {
 		this.departure=departure;
 		this.destination=destination;
 		this.maxCapacity=maxCapacity;
-		this.name=flightName;
+		this.flightName =flightName;
 		this.price=price;
 		this.source=source;
 		this.status=status;
@@ -33,7 +33,7 @@ public class Flight {
 
 	public Flight(ResultSet set) throws SQLException {
 			this.no=set.getString("flight_no");
-			this.name=set.getString("flight_name");
+			this.flightName =set.getString("flight_name");
 			this.airline=set.getString("airline_name");
 			this.source=set.getString("source");
 			this.destination=set.getString("destination");
@@ -43,5 +43,49 @@ public class Flight {
 			this.availableSeats=set.getInt("available_seats");
 			this.status=FlightStatus.fromString(set.getString("status"));
 			this.maxCapacity=set.getInt("max_capacity");
+	}
+
+	public String getNo() {
+		return this.no;
+	}
+
+	public String getFlightName() {
+		return flightName;
+	}
+
+	public String getAirline() {
+		return airline;
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public String getDestination() {
+		return destination;
+	}
+
+	public LocalDateTime getArrival() {
+		return arrival;
+	}
+
+	public LocalDateTime getDeparture() {
+		return departure;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public int getAvailableSeats() {
+		return availableSeats;
+	}
+
+	public FlightStatus getStatus() {
+		return status;
+	}
+
+	public int getMaxCapacity() {
+		return maxCapacity;
 	}
 }

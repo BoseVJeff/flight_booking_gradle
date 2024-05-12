@@ -89,6 +89,16 @@ public class Database {
 	public static final String deleteUserSql="DELETE FROM Users WHERE user_id=?";
 	public PreparedStatement deleteUserStmt;
 
+	public static final String getFlightsSql="SELECT * FROM Flights WHERE source=? AND destination=?";
+	public PreparedStatement getFlightsStmt;
+
+	public  static final String getSourceCitiesSql="SELECT UNIQUE(source) FROM Flights ORDER BY source ASC";
+	public PreparedStatement getSourceCitiesStmt;
+
+	public  static final String getDestinationCitiesSql="SELECT UNIQUE(destination) FROM Flights ORDER BY destination ASC";
+	public PreparedStatement getDestinationCitiesStmt;
+
+
 	private static String wrapSql(String sqlStatement) {
 		String sql=sqlStatement.replace("'","''");
 		sql=sql.replace(";","");
@@ -144,6 +154,9 @@ public class Database {
 		this.makeAdminPreparedStmt=this.connection.prepareStatement(makeAdminSql);
 		this.removeAdminPreparedStmt=this.connection.prepareStatement(removeAdminSql);
 		this.deleteUserStmt=this.connection.prepareStatement(deleteUserSql);
+		this.getFlightsStmt=this.connection.prepareStatement(getFlightsSql);
+		this.getSourceCitiesStmt=this.connection.prepareStatement(getSourceCitiesSql);
+		this.getDestinationCitiesStmt=this.connection.prepareStatement(getDestinationCitiesSql);
 	}
 
 	public void insertUser(String name,String password, String email, String phoneNumber,boolean isAdmin) throws SQLException {
@@ -195,6 +208,44 @@ public class Database {
 		this.removeAdminPreparedStmt.setInt(1,userId);
 		this.removeAdminPreparedStmt.execute();
 		return;
+	}
+
+	public ArrayList<String> getSourceCities() throws SQLException {
+		ArrayList<String> cities=new ArrayList<String>();
+
+		ResultSet resultSet=this.getSourceCitiesStmt.executeQuery();
+
+		while(resultSet.next()) {
+			cities.add(resultSet.getString(1));
+		}
+
+		return cities;
+	}
+
+	public ArrayList<String> getDestinationCities() throws SQLException {
+		ArrayList<String> cities=new ArrayList<String>();
+
+		ResultSet resultSet=this.getDestinationCitiesStmt.executeQuery();
+
+		while(resultSet.next()) {
+			cities.add(resultSet.getString(1));
+		}
+
+		return cities;
+	}
+
+	public ArrayList<Flight> getFlights(String fromCity, String toCity) throws SQLException {
+		ArrayList<Flight> flightArrayList=new ArrayList<Flight>();
+
+		this.getFlightsStmt.setString(1,fromCity);
+		this.getFlightsStmt.setString(2,toCity);
+		ResultSet resultSet=this.getFlightsStmt.executeQuery();
+
+		while(resultSet.next()) {
+			flightArrayList.add(new Flight(resultSet));
+		}
+
+		return flightArrayList;
 	}
 
 	public void test() throws SQLException {

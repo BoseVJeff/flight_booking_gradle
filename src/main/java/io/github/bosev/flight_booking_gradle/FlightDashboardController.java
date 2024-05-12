@@ -80,7 +80,17 @@ public class FlightDashboardController implements Initializable {
 	}
 
 	@FXML
-	protected void bookFlightsButtonAction() {}
+	protected void bookFlightsButtonAction() {
+		try {
+			this.navigator.push(FlightBookingController.getScene());
+		} catch (IOException e) {
+			System.err.println("Error loading Flight booking page!");
+			System.err.println(e.getMessage());
+			for (int i = 0; i < e.getStackTrace().length; i++) {
+				System.err.println(e.getStackTrace()[i].toString());
+			}
+		}
+	}
 
 	@FXML
 	protected void viewTicketsButtonAction() {}
