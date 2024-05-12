@@ -38,6 +38,9 @@ public class PassengerShowController extends FxSceneBase implements Initializabl
 	private Button paymentButton;
 
 	@FXML
+	private Button cancelButton;
+
+	@FXML
 	private Label messageLabel;
 
 	@FXML
@@ -103,5 +106,13 @@ public class PassengerShowController extends FxSceneBase implements Initializabl
 		} catch (Exception e) {
 			logException(e,"Unable to set paymentButton handler!");
 		}
+
+		this.cancelButton.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				appState.passengers.setAll();
+				navigator.pop();
+			}
+		});
 	}
 }

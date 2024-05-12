@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -19,7 +20,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class FlightBookingController implements Initializable {
+public class FlightBookingController extends FxSceneBase implements Initializable {
 	private Database database;
 	private AppState appState;
 	private Navigator navigator;
@@ -129,6 +130,7 @@ public class FlightBookingController implements Initializable {
 					for (TablePosition tablePosition : c.getAddedSubList()) {
 						System.out.println("Selected flight"+flights.get(tablePosition.getRow()).flightName);
 						appState.selectedFlight=flights.get(tablePosition.getRow());
+						optionsTable.getSelectionModel().clearSelection();
 						try {
 							navigator.push(PassengerShowController.getScene());
 						} catch (IOException e) {
@@ -143,6 +145,17 @@ public class FlightBookingController implements Initializable {
 				}
 			}
 		});
+
+		this.backButton.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				try {
+					navigator.push(FlightDashboardController.getScene());
+				} catch (IOException e) {
+					logException(e,"Unable to push FlightDashboardController!");
+				}
+			}
+		});
 	}
 
 	public static Scene getScene() throws IOException {
@@ -150,6 +163,9 @@ public class FlightBookingController implements Initializable {
 		Scene scene = new Scene(fxmlLoader.load());
 		return scene;
 	}
+
+	@FXML
+	private Button backButton;
 
 	@FXML
 	private ComboBox<String> fromComboBox;

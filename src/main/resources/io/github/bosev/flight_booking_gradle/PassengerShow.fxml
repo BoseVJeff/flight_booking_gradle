@@ -26,9 +26,10 @@
                   </TableView>
                   <HBox prefHeight="50.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="addPassengerButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Add Passenger" textAlignment="CENTER" />
-                        <Label fx:id="messageLabel" prefHeight="50.0" prefWidth="375.0" text="Add Passengers" textAlignment="CENTER" />
-                        <Button fx:id="paymentButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="125.0" text="Proceed to Payment" />
+                        <Button fx:id="cancelButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Cancel" />
+                        <Button fx:id="addPassengerButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Add Passenger" textAlignment="CENTER" />
+                        <Label fx:id="messageLabel" prefHeight="50.0" prefWidth="150.0" text="Add Passengers" textAlignment="CENTER" wrapText="true" />
+                        <Button fx:id="paymentButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Proceed to Payment" />
                      </children>
                   </HBox>
                </children>

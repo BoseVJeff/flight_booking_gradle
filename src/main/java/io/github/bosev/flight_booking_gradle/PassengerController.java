@@ -69,6 +69,13 @@ public class PassengerController extends FxSceneBase implements Initializable {
 				}
 			}
 		});
+
+		this.cancelButton.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				navigator.pop();
+			}
+		});
 	}
 
 	@FXML
@@ -106,4 +113,7 @@ public class PassengerController extends FxSceneBase implements Initializable {
 
 	@FXML
 	private Button addButton;
+
+	@FXML
+	private Button cancelButton;
 }
