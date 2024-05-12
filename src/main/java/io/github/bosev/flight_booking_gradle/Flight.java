@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 
 public class Flight {
-	public String no;
+	public int no;
 	public String flightName;
 	public String airline;
 	public String source;
@@ -17,7 +17,7 @@ public class Flight {
 	public FlightStatus status;
 	public int maxCapacity;
 
-	public Flight(String flightNumber,String flightName,String airline,String source,String destination,LocalDateTime arrival,LocalDateTime departure,double price,int availableSeats,FlightStatus status,int maxCapacity) {
+	public Flight(int flightNumber,String flightName,String airline,String source,String destination,LocalDateTime arrival,LocalDateTime departure,double price,int availableSeats,FlightStatus status,int maxCapacity) {
 		this.airline=airline;
 		this.arrival=arrival;
 		this.no=flightNumber;
@@ -32,7 +32,7 @@ public class Flight {
 	}
 
 	public Flight(ResultSet set) throws SQLException {
-			this.no=set.getString("flight_no");
+			this.no=set.getInt("flight_no");
 			this.flightName =set.getString("flight_name");
 			this.airline=set.getString("airline_name");
 			this.source=set.getString("source");
@@ -45,7 +45,7 @@ public class Flight {
 			this.maxCapacity=set.getInt("max_capacity");
 	}
 
-	public String getNo() {
+	public int getNo() {
 		return this.no;
 	}
 

@@ -98,6 +98,12 @@ public class Database {
 	public  static final String getDestinationCitiesSql="SELECT UNIQUE(destination) FROM Flights ORDER BY destination ASC";
 	public PreparedStatement getDestinationCitiesStmt;
 
+	public static final String getBookedSeatsSql="SELECT seat_no FROM Passengers WHERE flight_no=?";
+	public PreparedStatement getBookedSeatsStmt;
+
+	public static final String addPassengerSql="INSERT INTO Passengers (name, identification_type, identification_id, flight_no, seat_no, user_id, notes, payment_id, age, gender) VALUES (?,?,?,?,?,?,?,?,?,?)";
+	public PreparedStatement addPassengerStmt;
+
 
 	private static String wrapSql(String sqlStatement) {
 		String sql=sqlStatement.replace("'","''");
@@ -157,6 +163,8 @@ public class Database {
 		this.getFlightsStmt=this.connection.prepareStatement(getFlightsSql);
 		this.getSourceCitiesStmt=this.connection.prepareStatement(getSourceCitiesSql);
 		this.getDestinationCitiesStmt=this.connection.prepareStatement(getDestinationCitiesSql);
+		this.getBookedSeatsStmt=this.connection.prepareStatement(getBookedSeatsSql);
+		this.addPassengerStmt=this.connection.prepareStatement(addPassengerSql);
 	}
 
 	public void insertUser(String name,String password, String email, String phoneNumber,boolean isAdmin) throws SQLException {
@@ -246,6 +254,34 @@ public class Database {
 		}
 
 		return flightArrayList;
+	}
+
+	public ArrayList<Integer> getBookedSeats(int flightNo) throws SQLException {
+		ArrayList<Integer> seatsList=new ArrayList<>();
+
+		this.getBookedSeatsStmt.setInt(1,flightNo);
+		ResultSet resultSet=this.getBookedSeatsStmt.executeQuery();
+
+		while (resultSet.next()) {
+			seatsList.add(resultSet.getInt(1));
+		}
+
+		return seatsList;
+	}
+
+	public void addPassenger(Passenger passenger,int userId) throws SQLException {
+		this.addPassengerStmt.setString(1,passenger.passengerName);
+		this.addPassengerStmt.setString(2,passenger.idType);
+		this.addPassengerStmt.setString(3,passenger.idId);
+		this.addPassengerStmt.setInt(4,passenger.flightId);
+		this.addPassengerStmt.setInt(5,passenger.seatNo);
+		this.addPassengerStmt.setInt(6,userId);
+		this.addPassengerStmt.setString(7,passenger.notes);
+		this.addPassengerStmt.setString(8,passenger.paymentId);
+		this.addPassengerStmt.setInt(9,passenger.age);
+		this.addPassengerStmt.setString(10,passenger.gender.toString());
+
+		this.addPassengerStmt.execute();
 	}
 
 	public void test() throws SQLException {
