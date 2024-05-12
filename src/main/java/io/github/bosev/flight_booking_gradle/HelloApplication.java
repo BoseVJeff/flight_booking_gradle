@@ -27,9 +27,10 @@ public class HelloApplication extends Application {
 				System.err.println(e.getStackTrace()[i].toString());
 			}
 		}
-//		navigator.push(HelloController.getScene());
 		try {
+//			navigator.push(HelloController.getScene());
 			navigator.push(LoginController.getScene());
+//			navigator.push(Seat.getScene());
 		} catch (IOException e) {
 			System.err.println("Error loading Login page!");
 			System.err.println(e.getMessage());
