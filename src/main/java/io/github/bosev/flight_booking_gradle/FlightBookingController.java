@@ -125,7 +125,7 @@ public class FlightBookingController implements Initializable {
 			public void onChanged(Change<? extends TablePosition> c) {
 				while(c.next()) {
 					for (TablePosition tablePosition : c.getAddedSubList()) {
-//						System.out.println("Selected flight"+);
+						System.out.println("Selected flight"+flights.get(tablePosition.getRow()).flightName);
 					}
 				}
 			}
