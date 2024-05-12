@@ -119,163 +119,72 @@
         </Label>
         <Line endX="103.99998474121094" endY="7.62939453125E-6" layoutX="100.0" layoutY="90.0" startX="-100.0" strokeWidth="2.0" AnchorPane.topAnchor="188.58578646183014" />
         <Line endX="1225.0" endY="7.62939453125E-6" layoutX="3007.0" layoutY="90.0" startX="-101.58580017089844" startY="7.62939453125E-6" strokeWidth="2.0" AnchorPane.leftAnchor="204.41419982910156" AnchorPane.topAnchor="189.00000762939453" />
-        <Label layoutX="248.0" layoutY="100.0" maxWidth="500.0" prefWidth="200.0" text="Flight name" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="200.0">
+        <Label layoutX="248.0" layoutY="100.0" maxWidth="500.0" prefWidth="200.0" text="Flight Name :-" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="200.0">
             <font>
-                <Font size="24.0" />
+                <Font name="Rockwell Bold Italic" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="405.0" layoutY="100.0" text="Departure Time" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="250.0">
+        <Label layoutX="405.0" layoutY="100.0" text="Departure Time :-" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="290.0">
             <font>
-                <Font size="24.0" />
+                <Font name="Rockwell Bold Italic" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="546.0" layoutY="100.0" text="Arrivel Time" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="300.0">
+        <Label layoutX="546.0" layoutY="100.0" prefHeight="40.0" prefWidth="200.0" text="Arrivel Time :-" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="380.0">
             <font>
-                <Font size="24.0" />
+                <Font name="Rockwell Bold Italic" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="730.0" layoutY="100.0" text=" First Class :-" AnchorPane.leftAnchor="-5.0" AnchorPane.topAnchor="370.0">
-            <font>
-                <Font name="System Bold Italic" size="24.0" />
-            </font>
-        </Label>
-        <Label layoutX="995.0" layoutY="101.0" text="Bussiness Class :-" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="560.0">
-            <font>
-                <Font name="System Bold Italic" size="24.0" />
-            </font>
-        </Label>
-        <Label layoutX="1271.0" layoutY="101.0" text="Economic Class :-" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="740.0">
-            <font>
-                <Font name="System Bold Italic" size="24.0" />
-            </font>
-        </Label>
-        <Label layoutX="664.0" layoutY="133.0" text="Total :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="410.0">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-        <Label layoutX="717.0" layoutY="133.0" text="Booked :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="440.0">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-        <Label layoutX="790.0" layoutY="133.0" text="Remaining :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="470.0">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-        <Label layoutX="956.0" layoutY="133.0" text="Total :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="600.0">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-        <Label layoutX="1009.0" layoutY="133.0" text="Booked :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="630.0">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-        <Label layoutX="1082.0" layoutY="133.0" text="Remaining :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="660.0">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-        <Label layoutX="1244.0" layoutY="133.0" text="Total :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="780.0">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-        <Label layoutX="1292.0" layoutY="133.0" text="Booked :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="810.0">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-        <Label layoutX="1361.0" layoutY="133.0" text="Remaining :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="840.0">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-        <Label layoutX="885.0" layoutY="133.0" text=" Cost :" AnchorPane.leftAnchor="-5.0" AnchorPane.topAnchor="500.0">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-        <Label layoutX="1177.0" layoutY="133.0" text="Cost :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="690.0">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-        <Label layoutX="1454.0" layoutY="133.0" text="Cost :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="870.0">
-            <font>
-                <Font name="System Bold" size="18.0" />
-            </font>
-        </Label>
-      <Line endX="100.0" endY="7.62939453125E-6" layoutX="110.0" layoutY="200.0" startX="-100.0" strokeWidth="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="360.0" />
-      <Line endX="100.0" endY="7.62939453125E-6" layoutX="111.0" layoutY="401.0" startX="-100.0" strokeWidth="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="550.0" />
-      <Line endX="100.0" endY="7.62939453125E-6" layoutX="111.0" layoutY="561.0" startX="-100.0" strokeWidth="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="730.0" />
-      <Label layoutX="10.0" layoutY="420.0" text="xxxxx" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="410.0">
+      <Label layoutX="10.0" layoutY="390.0" prefHeight="40.0" prefWidth="200.0" text="Total Seats :-" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="480.0">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Rockwell Bold Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="70.0" layoutY="420.0" text="xxxxx" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="440.0">
+      <Label layoutX="10.0" layoutY="490.0" prefHeight="40.0" prefWidth="200.0" text="Seats Booked :-" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="580.0">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Rockwell Bold Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="90.0" layoutY="450.0" text="xxxxx" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="470.0">
+      <Label layoutX="10.0" layoutY="590.0" prefHeight="40.0" prefWidth="200.0" text="Seats Available :-" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="680.0">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Rockwell Bold Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="120.0" layoutY="480.0" text="xxxxx" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="500.0">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="70.0" layoutY="510.0" text="xxxxx" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="600.0">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="70.0" layoutY="610.0" text="xxxxx" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="630.0">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="90.0" layoutY="640.0" text="xxxxx" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="660.0">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="120.0" layoutY="670.0" text="xxxxx" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="690.0">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="70.0" layoutY="700.0" text="xxxxx" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="780.0">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="70.0" layoutY="790.0" text="xxxxx" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="810.0">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="90.0" layoutY="820.0" text="xxxxx" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="840.0">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="120.0" layoutY="850.0" text="xxxxx" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="870.0">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Button mnemonicParsing="false" text="Back" underline="true" AnchorPane.leftAnchor="1450.0" AnchorPane.topAnchor="120.0">
+
+
+      <Button mnemonicParsing="false" text="Back to Dashboard" underline="true" AnchorPane.leftAnchor="1300.0" AnchorPane.topAnchor="120.0">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
+      <Label layoutX="10.0" layoutY="210.0" maxWidth="500.0" prefHeight="50.0" prefWidth="200.0" text="xxxxx" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="230.0">
+         <font>
+            <Font name="Rockwell Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="10.0" layoutY="300.0" prefHeight="50.0" prefWidth="200.0" text="xxxxx" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="320.0">
+         <font>
+            <Font name="Rockwell Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="10.0" layoutY="390.0" prefHeight="50.0" prefWidth="200.0" text="xxxxx" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="420.0">
+         <font>
+            <Font name="Rockwell Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="10.0" layoutY="490.0" prefHeight="50.0" prefWidth="200.0" text="xxxxx" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="520.0">
+         <font>
+            <Font name="Rockwell Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="10.0" layoutY="530.0" prefHeight="50.0" prefWidth="200.0" text="xxxxx" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="620.0">
+         <font>
+            <Font name="Rockwell Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="10.0" layoutY="630.0" prefHeight="50.0" prefWidth="200.0" text="xxxxx" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="720.0">
+         <font>
+            <Font name="Rockwell Bold" size="20.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

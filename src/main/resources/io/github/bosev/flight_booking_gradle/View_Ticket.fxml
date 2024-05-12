@@ -91,7 +91,7 @@
     </HBox>
    <HBox prefHeight="50.0" prefWidth="600.0" AnchorPane.topAnchor="100.0">
       <children>
-         <Label alignment="CENTER" prefWidth="540.0" text="Ticket" underline="true">
+         <Label alignment="CENTER" prefWidth="600.0" text="Ticket" underline="true">
             <HBox.margin>
                <Insets />
             </HBox.margin>
@@ -99,14 +99,6 @@
                <Font name="Tw Cen MT Condensed Bold" size="48.0" />
             </font>
          </Label>
-         <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="55.0" text="Back">
-            <HBox.margin>
-               <Insets top="2.0" />
-            </HBox.margin>
-            <font>
-               <Font name="Times New Roman Bold Italic" size="15.0" />
-            </font>
-         </Button>
       </children>
    </HBox>
    <VBox prefHeight="300.0" prefWidth="110.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="200.0">
@@ -488,4 +480,16 @@
          </HBox>
       </children>
    </VBox>
+   <HBox layoutX="10.0" layoutY="110.0" prefHeight="50.0" prefWidth="300.0" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="450.0">
+      <children>
+         <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Back to Dashboard" underline="true">
+            <HBox.margin>
+               <Insets left="140.0" top="5.0" />
+            </HBox.margin>
+            <font>
+               <Font name="Times New Roman Bold" size="15.0" />
+            </font>
+         </Button>
+      </children>
+   </HBox>
 </AnchorPane>
